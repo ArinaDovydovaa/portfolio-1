@@ -1,0 +1,8 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Frontend tag favicon</title>
+  <g fill="#fba820">
+    <path d="M6 32 23 14v11l-7 7 7 7v11L6 32Z"/>
+    <path d="M58 32 41 14v11l7 7-7 7v11l17-18Z"/>
+    <path d="M27 50 36 14h5l-9 36h-5Z"/>
+  </g>
+</svg>
