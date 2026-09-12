@@ -1,18 +1,19 @@
 import React from 'react';
-import {Icon} from '../../../../components/icon/Icon';
 import styled from 'styled-components';
 
 type SkillPropsType = {
-  iconId: string
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   title: string
   description: string
 }
 
 
 export const Skill = (props: SkillPropsType) => {
+  const Icon = props.icon;
+
   return (
     <StyledSkill>
-      <Icon iconId={props.iconId}/>
+      <Icon width={70} height={70} />
       <SkillTitle>{props.title}</SkillTitle>
       <SkillText>{props.description}</SkillText>
     </StyledSkill>

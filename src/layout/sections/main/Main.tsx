@@ -17,8 +17,8 @@ export const Main = () => {
 
         <div>
           <span>Hi, there</span>
-          <MyName>I am Arina Dovydova</MyName>
-          <MainTitle> Web Developer</MainTitle>
+          <MyName>I'm Arina Dovydova</MyName>
+          <MainTitle>Front-end Developer</MainTitle>
         </div>
 
 
@@ -28,8 +28,8 @@ export const Main = () => {
 };
 
 const StyledMain = styled.div`
-  min-height: 100vh;
-  background-color: gray;
+  min-height: 50vh;
+  background: #202020;
 `
 
 const Photo = styled.img`

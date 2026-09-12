@@ -1,10 +1,10 @@
 import React from 'react';
-import { Icon } from '../icon/Icon';
+import LogoIcon from '../../assets/icons/logo.svg?react';
 
 export const Logo = () => {
   return (
     <a href=" ">
-      <Icon iconId={'telegram'} />
+      <LogoIcon width={60} height={60} />
     </a>
 
   );
