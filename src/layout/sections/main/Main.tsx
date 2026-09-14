@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import photo from '../../../assets/images/my-photo.webp'
+import photo from '../../../assets/images/my-photo-1.webp'
 import {FlexWrapper} from "../../../components/FlexWrapper";
 
 export const Main = () => {
@@ -9,6 +9,7 @@ export const Main = () => {
       <FlexWrapper
         align={'center'}
         justify={"space-around"}
+
       >
         <Photo
           src={photo}
@@ -28,20 +29,24 @@ export const Main = () => {
 };
 
 const StyledMain = styled.div`
-  min-height: 50vh;
+  min-height: 30vh;
   background: #202020;
 `
 
 const Photo = styled.img`
-  width: 450px;
-  height: 430px;
+  width: 600px;
+  height: 600px;
   object-fit: cover;`
 
 const MainTitle = styled.h1`
-
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 1.18519;
+  letter-spacing: -0.01em;
+  color: #dedede;
 `
 const MyName = styled.h2`
-
+  color: #dedede;
 `
 
 
