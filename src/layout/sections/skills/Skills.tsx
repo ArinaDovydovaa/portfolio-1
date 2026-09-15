@@ -12,12 +12,16 @@ import FigmaIcon from '../../../assets/icons/figma.svg?react';
 import GinHubIcon from '../../../assets/icons/github.svg?react';
 
 
-
 export const Skills = () => {
   return (
     <StyledSkills>
+
       <SectionTitle>Skills</SectionTitle>
-      <FlexWrapper wrap={"wrap"} justify={"space-between"}>
+      <FlexWrapper
+        wrap={"wrap"}
+        justify={"space-between"}
+        gap={"20px"}
+      >
         <Skill
           icon={HtmlIcon}
           title={"html"}

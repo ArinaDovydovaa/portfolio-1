@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import photo from '../../../assets/images/my-photo-1.webp'
 import {FlexWrapper} from "../../../components/FlexWrapper";
@@ -30,13 +29,14 @@ export const Main = () => {
 
 const StyledMain = styled.div`
   min-height: 30vh;
-  background: #202020;
+  background: #222;
 `
 
 const Photo = styled.img`
   width: 600px;
   height: 600px;
-  object-fit: cover;`
+  object-fit: cover;
+`
 
 const MainTitle = styled.h1`
   font-weight: 700;

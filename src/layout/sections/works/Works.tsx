@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components'
 import {SectionTitle} from '../../../components/SectionTitle'
 import {Menu} from '../../../components/menu/Menu'
@@ -14,7 +13,10 @@ export const Works = () => {
     <StyledWorks>
       <SectionTitle>Projects</SectionTitle>
       <Menu menuItems={worksItem} />
-      <FlexWrapper justify={'space-between'}>
+      <FlexWrapper
+        justify={'space-between'}
+        wrap={'wrap'}
+      >
         <Work
           title={"Project Tile goes here"}
           src={projImg}
@@ -30,11 +32,7 @@ export const Works = () => {
           src={projImg}
           text={"his is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
         />
-        <Work
-          title={"Project Tile goes here"}
-          src={projImg}
-          text={"his is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
-        />
+
       </FlexWrapper>
     </StyledWorks>
   );
