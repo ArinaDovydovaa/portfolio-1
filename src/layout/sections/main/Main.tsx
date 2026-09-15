@@ -1,52 +1,57 @@
 import styled from 'styled-components';
-import photo from '../../../assets/images/my-photo-1.webp'
-import {FlexWrapper} from "../../../components/FlexWrapper";
+import photo from '../../../assets/images/my-photo.webp'
 
 export const Main = () => {
   return (
     <StyledMain>
-      <FlexWrapper
-        align={'center'}
-        justify={"space-around"}
-
-      >
-        <Photo
-          src={photo}
-          alt=""
-        />
-
-        <div>
-          <span>Hi, there</span>
-          <MyName>I'm Arina Dovydova</MyName>
-          <MainTitle>Front-end Developer</MainTitle>
-        </div>
-
-
-      </FlexWrapper>
+      <MainContent>
+        <MainSpan>Hi, there</MainSpan>
+        <MyName>I'm Arina Dovydova</MyName>
+        <MainTitle>Front-end Developer</MainTitle>
+      </MainContent>
     </StyledMain>
   );
 };
 
-const StyledMain = styled.div`
-  min-height: 30vh;
-  background: #222;
+const StyledMain = styled.section`
+  min-height: 800px;
+  background-image: url(${photo});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
 `
 
-const Photo = styled.img`
-  width: 600px;
-  height: 600px;
-  object-fit: cover;
+const MainContent = styled.div`
+
+
+`
+
+
+const MainSpan = styled.span`
+  color: #dedede;
+  font-size: 40px;
+`
+
+const MyName = styled.h2`
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 1.12682;
+  letter-spacing: 0.02em;
+  color: #dedede;
 `
 
 const MainTitle = styled.h1`
   font-weight: 700;
-  font-size: 54px;
-  line-height: 1.18519;
-  letter-spacing: -0.01em;
-  color: #dedede;
+  font-size: 70px;
+  line-height: 1.12682;
+  letter-spacing: 0.02em;
+  color: #fba820;
 `
-const MyName = styled.h2`
-  color: #dedede;
-`
+
+
 
 
