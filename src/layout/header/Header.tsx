@@ -1,14 +1,23 @@
 import styled from 'styled-components';
 import {Logo} from "../../components/logo/Logo";
 import {Menu} from "../../components/menu/Menu";
+import {Container} from "@/components/Container.tsx";
+import {FlexWrapper} from "@/components/FlexWrapper.tsx";
 
 const menuItems = ["About", "Projects", "Contacts"];
 
 export const Header = () => {
   return (
     <StyledHeader>
-      <Logo />
-      <Menu menuItems={menuItems} />
+      <Container>
+        <FlexWrapper
+          justify={"space-between"}
+          align={"center"}
+        >
+          <Logo />
+          <Menu menuItems={menuItems} />
+        </FlexWrapper>
+      </Container>
     </StyledHeader>
   );
 };
@@ -16,8 +25,5 @@ export const Header = () => {
 const StyledHeader = styled.header`
 
   background-color: #323232;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 `
 

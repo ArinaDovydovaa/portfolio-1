@@ -41,6 +41,6 @@ export const Works = () => {
 };
 
 const StyledWorks = styled.section`min-height: 30vh;
-  background-color: gray;
+  
 `
 

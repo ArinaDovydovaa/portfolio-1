@@ -23,7 +23,7 @@ export const Work = (props: WorkPropsType) => {
 };
 
 const StyledWork = styled.div`
-  background-color: darkgray;
+  
   max-width: 300px;
   width: 100%;
 `
