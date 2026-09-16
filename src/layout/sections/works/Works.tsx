@@ -1,9 +1,11 @@
 import styled from 'styled-components'
-import {SectionTitle} from '../../../components/SectionTitle'
-import {Menu} from '../../../components/menu/Menu'
-import {FlexWrapper} from '../../../components/FlexWrapper'
+import {SectionTitle} from '@/components/SectionTitle.tsx'
+import {Menu} from '@/components/menu/Menu.tsx'
+import {FlexWrapper} from '@/components/FlexWrapper.tsx'
 import {Work} from './work/Work'
-import projImg from '../../../assets/images/img-1.jpg'
+import socialImg from '../../../assets/images/social-img.webp'
+import timerImg from '../../../assets/images/timer-img.webp'
+
 
 const worksItem = ["All", "Landing page", "React", "spa"]
 
@@ -18,18 +20,18 @@ export const Works = () => {
         wrap={'wrap'}
       >
         <Work
-          title={"Project Tile goes here"}
-          src={projImg}
+          title={"Social Network"}
+          src={socialImg}
+          text={"his is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
+        />
+        <Work
+          title={"Timer"}
+          src={timerImg}
           text={"his is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
         />
         <Work
           title={"Project Tile goes here"}
-          src={projImg}
-          text={"his is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
-        />
-        <Work
-          title={"Project Tile goes here"}
-          src={projImg}
+          src={socialImg}
           text={"his is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
         />
 

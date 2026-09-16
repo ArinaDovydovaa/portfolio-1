@@ -14,7 +14,7 @@ const socialItems = [
   {
     icon: GmailIcon,
     href: 'https://t.me/Arina_Dovydova',
-    label: 'gmail',
+    label: 'Gmail',
   },
 ];
 
