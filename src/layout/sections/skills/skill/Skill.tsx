@@ -8,7 +8,6 @@ type SkillPropsType = {
   description: string
 }
 
-
 export const Skill = (props: SkillPropsType) => {
   const Icon = props.icon;
 
@@ -19,7 +18,6 @@ export const Skill = (props: SkillPropsType) => {
         height={70}
       />
       <SkillTitle>{props.title}</SkillTitle>
-      
       <Text>{props.description}</Text>
     </StyledSkill>
   );
