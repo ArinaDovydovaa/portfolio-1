@@ -1,11 +1,25 @@
-import React from 'react';
-import LogoIcon from '../../assets/icons/logo.svg?react';
+import logo from '../../assets/images/myLogo.png';
+import styled from 'styled-components';
 
 export const Logo = () => {
   return (
-    <a href=" ">
-      <LogoIcon width={60} height={60} />
-    </a>
-
+    <LogoLink href=" ">
+      <LogoImg
+        src={logo}
+        alt="Arina Dovydova"
+      />
+    </LogoLink>
   );
 };
+
+const LogoLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+`
+
+const LogoImg = styled.img`
+  width: 30%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 30%;
+`

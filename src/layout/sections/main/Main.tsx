@@ -1,55 +1,63 @@
 import styled from 'styled-components';
 import photo from '../../../assets/images/my-photo.webp'
+import {Container} from "@/components/Container.tsx";
 
 export const Main = () => {
   return (
     <StyledMain>
-      <MainContent>
-        <MainSpan>Hi, there</MainSpan>
-        <MyName>I'm Arina Dovydova</MyName>
-        <MainTitle>Front-end Developer</MainTitle>
-      </MainContent>
+      <Container>
+        <MainContent>
+          <MainSpan>Hello, I’m</MainSpan>
+          <MyName>Arina Dovydova</MyName>
+          <MainTitle>Front-end Developer</MainTitle>
+        </MainContent>
+      </Container>
     </StyledMain>
   );
 };
 
 const StyledMain = styled.section`
-  min-height: 800px;
+  min-height: 640px;
   background-image: url(${photo});
   background-size: cover;
-  background-position: center;
+  background-position: top left;
   background-repeat: no-repeat;
-
   display: flex;
   align-items: center;
-  justify-content: end;
+
+  & > ${Container} {
+    display: flex;
+    justify-content: flex-end; /* контент справа */
+  }
 `
 
 const MainContent = styled.div`
-
-
+  padding: 20px
 `
 
 
 const MainSpan = styled.span`
   color: #dedede;
   font-size: 40px;
+
 `
 
 const MyName = styled.h2`
-  font-weight: 500;
-  font-size: 70px;
-  line-height: 1.12682;
-  letter-spacing: 0.02em;
-  color: #dedede;
-`
-
-const MainTitle = styled.h1`
-  font-weight: 700;
-  font-size: 70px;
+  font-weight: 600;
+  font-size: 50px;
   line-height: 1.12682;
   letter-spacing: 0.02em;
   color: #fba820;
+
+`
+
+const MainTitle = styled.h1`
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 1.12682;
+  letter-spacing: 0.02em;
+  color: #dedede;
+
 `
 
 
