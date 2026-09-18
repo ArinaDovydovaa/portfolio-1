@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {theme} from "@/styles/Theme.ts";
 
 
 export const HeaderMenu = (props: { menuItems: Array<string> }) => {
@@ -27,8 +28,7 @@ const ListItem = styled.li`
 
 `
 const Link = styled.a`
-  color: white;
-  text-decoration: none;
+  color: ${theme.colors.accentTextColor};
   font-size: 18px;
   position: relative;
 
@@ -39,7 +39,7 @@ const Link = styled.a`
     bottom: 2px;
     width: 0;
     height: 2px;
-    background-color: #fba820;
+    background-color: ${theme.colors.accentColor};
     transition: width 0.3s ease;
   }
 

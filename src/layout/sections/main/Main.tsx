@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import photo from '../../../assets/images/my-photo.webp'
 import {Container} from "@/components/Container.tsx";
+import {theme} from "@/styles/Theme.ts";
 
 export const Main = () => {
   return (
@@ -32,12 +33,12 @@ const StyledMain = styled.section`
 `
 
 const MainContent = styled.div`
-  padding: 20px
+  
 `
 
 
 const MainSpan = styled.span`
-  color: #dedede;
+  color: ${theme.colors.accentTextColor};
   font-size: 40px;
 
 `
@@ -45,18 +46,15 @@ const MainSpan = styled.span`
 const MyName = styled.h2`
   font-weight: 600;
   font-size: 50px;
-  line-height: 1.12682;
   letter-spacing: 0.02em;
-  color: #fba820;
-
+  color: ${theme.colors.accentColor};
 `
 
 const MainTitle = styled.h1`
   font-weight: 600;
   font-size: 60px;
-  line-height: 1.12682;
   letter-spacing: 0.02em;
-  color: #dedede;
+  color: ${theme.colors.accentTextColor};
 
 `
 

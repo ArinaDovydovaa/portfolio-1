@@ -12,7 +12,7 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    // Обработчик скролла: если прокрутили больше 50px — включаем "плотный" вид
+    // Обработчик скролла. если больше 50px —  "плотный" вид
     const onScroll = () => setIsScrolled(window.scrollY > 50);
 
     // Подписываемся на событие скролла при монтировании
