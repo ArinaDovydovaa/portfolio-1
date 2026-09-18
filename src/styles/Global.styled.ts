@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: #535353;
   }
 
   ul {
@@ -34,10 +35,28 @@ export const GlobalStyle = createGlobalStyle`
   button {
     background-color: unset;
     border: none;
+    cursor: pointer;
+    color: ${theme.colors.font};
   }
 
   section {
     padding: 50px 0;
   }
 
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+    color: ${theme.colors.font};
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #535353;
+  }
 `

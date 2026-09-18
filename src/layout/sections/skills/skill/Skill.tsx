@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-// import {Text} from '@/components/Text.tsx';
+
 
 type SkillPropsType = {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   title: string
-  // description: string
+  description: string
 }
 
 export const Skill = (props: SkillPropsType) => {
@@ -18,7 +18,7 @@ export const Skill = (props: SkillPropsType) => {
         height={70}
       />
       <SkillTitle>{props.title}</SkillTitle>
-      {/*<Text>{props.description}</Text>*/}
+      <SkillText>{props.description}</SkillText>
     </StyledSkill>
   );
 };
@@ -32,8 +32,8 @@ const StyledSkill = styled.div`
 
 `
 const SkillTitle = styled.h3`
-  font-size: 16px;
-  letter-spacing: 0.01em;
-
+  font-size: 18px;
 `
+const SkillText = styled.p``
+
 

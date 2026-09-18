@@ -25,32 +25,32 @@ export const Skills = () => {
           <Skill
             icon={HtmlIcon}
             title={"html"}
-            // description={"consectetur adipiscing elit duis tristique"}
+            description={"consectetur adipiscing elit duis tristique"}
           />
           <Skill
             icon={CssIcon}
             title={"css"}
-            // description={"consectetur adipiscing elit duis tristique"}
+            description={"consectetur adipiscing elit duis tristique"}
           />
           <Skill
             icon={JsIcon}
             title={"js"}
-            // description={"consectetur adipiscing elit duis tristique"}
+            description={"consectetur adipiscing elit duis tristique"}
           />
           <Skill
             icon={ReactIcon}
             title={"react"}
-            // description={"consectetur adipiscing elit duis tristique"}
+            description={"consectetur adipiscing elit duis tristique"}
           />
           <Skill
             icon={FigmaIcon}
             title={"figma"}
-            // description={"consectetur adipiscing elit duis tristique"}
+            description={"consectetur adipiscing elit duis tristique"}
           />
           <Skill
             icon={GinHubIcon}
             title={"GitHub"}
-            // description={"consectetur adipiscing elit duis tristique"}
+            description={"consectetur adipiscing elit duis tristique"}
           />
         </FlexWrapper>
       </Container>
