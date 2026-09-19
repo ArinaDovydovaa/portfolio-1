@@ -37,7 +37,7 @@ export const Contact = () => {
   return (
     <StyledContacts>
       <Container>
-        <SectionTitle>Let’s work together</SectionTitle>
+        <StyledSectionTitle>Let’s work together</StyledSectionTitle>
 
         <StyledContent>
           <StyledInfo>
@@ -64,8 +64,11 @@ export const Contact = () => {
 
 
 const StyledContacts = styled.section`
-  background-color: ${theme.colors.primaryBg};
+  background-color: ${theme.colors.titleColor};
 
+`
+const StyledSectionTitle = styled(SectionTitle)`
+  color: ${theme.colors.secondaryTitleColor};
 `
 const StyledContent = styled.div`
   display: grid;

@@ -3,9 +3,8 @@ import styled, {css} from 'styled-components';
 import {Logo} from "../../components/logo/Logo";
 import {Container} from "@/components/Container";
 import {FlexWrapper} from "@/components/FlexWrapper.tsx";
-import {HeaderMenu} from "@/layout/header/HeaderMenu.tsx";
+import {Menu} from "@/components/menu/Menu";
 
-const menuItems = ["About", "Projects", "Contacts"];
 
 export const Header = () => {
   // Флаг: проскроллена ли страница достаточно, чтобы уплотнить хедер
@@ -29,9 +28,9 @@ export const Header = () => {
         <FlexWrapper
           justify={"space-between"}
           align={"center"}
-        ><Logo />
-          {/*Меню принимает массив пунктов через пропс*/}
-          <HeaderMenu menuItems={menuItems} />
+        >
+          <Logo />
+          <Menu />
         </FlexWrapper>
       </Container>
     </StyledHeader>

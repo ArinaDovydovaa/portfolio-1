@@ -18,7 +18,7 @@ const LogoLink = styled.a`
 `
 
 const LogoImg = styled.img`
-  width: 30%;
+  width: 250px;
   height: 100%;
   object-fit: contain;
   border-radius: 30%;
