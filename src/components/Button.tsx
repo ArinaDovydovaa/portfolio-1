@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import {theme} from "@/styles/Theme.ts";
 
 export const Button = styled.button`
-  width: 186px;
-  height: 56px;
+  width: 140px;
+  height: 40px;
   background: rgba(251, 168, 32, 0.6); // 60%
 
 
