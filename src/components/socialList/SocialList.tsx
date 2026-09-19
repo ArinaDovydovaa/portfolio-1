@@ -23,8 +23,8 @@ export const SocialList = (props: SocialListPropsType) => {
               aria-label={item.label}
             >
               <Icon
-                width={24}
-                height={24}
+                width={50}
+                height={50}
               />
             </SocialLink>
           </SocialItem>
@@ -36,7 +36,7 @@ export const SocialList = (props: SocialListPropsType) => {
 
 const StyledSocialList = styled.ul`
   display: flex;
-  gap: 20px;
+  gap: 70px;
   list-style: none;
   margin: 0;
   padding: 0;

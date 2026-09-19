@@ -33,12 +33,12 @@ const StyledMain = styled.section`
 `
 
 const MainContent = styled.div`
-  
+
 `
 
 
 const MainSpan = styled.span`
-  color: ${theme.colors.accentTextColor};
+  color: ${theme.colors.secondaryTitleColor};
   font-size: 40px;
 
 `
@@ -54,7 +54,7 @@ const MainTitle = styled.h1`
   font-weight: 600;
   font-size: 60px;
   letter-spacing: 0.02em;
-  color: ${theme.colors.accentTextColor};
+  color: ${theme.colors.secondaryTitleColor};
 
 `
 

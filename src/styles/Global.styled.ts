@@ -19,13 +19,13 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: ${theme.colors.font};
-    background-color: ${theme.colors.primaryBg};
+    background-color: ${theme.colors.secondaryBg};
     line-height: 1.2;
   }
 
   a {
     text-decoration: none;
-    color: #535353;
+    color: ${theme.colors.small};
   }
 
   ul {
@@ -57,6 +57,6 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 25px;
     letter-spacing: 0.01em;
     text-align: center;
-    color: #535353;
+    color: ${theme.colors.small};
   }
 `

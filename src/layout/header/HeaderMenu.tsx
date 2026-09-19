@@ -28,7 +28,7 @@ const ListItem = styled.li`
 
 `
 const Link = styled.a`
-  color: ${theme.colors.accentTextColor};
+  color: ${theme.colors.secondaryTitleColor};
   font-size: 18px;
   position: relative;
 

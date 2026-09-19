@@ -14,8 +14,8 @@ export const Skill = (props: SkillPropsType) => {
   return (
     <StyledSkill>
       <Icon
-        width={70}
-        height={70}
+        width={60}
+        height={60}
       />
       <SkillTitle>{props.title}</SkillTitle>
       <SkillText>{props.description}</SkillText>

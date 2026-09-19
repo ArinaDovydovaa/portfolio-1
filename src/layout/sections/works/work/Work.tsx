@@ -31,9 +31,10 @@ export const Work = (props: WorkPropsType) => {
 };
 
 const Link = styled.a`
+    // color: ${theme.colors.small};
 `
 const StyledWork = styled.div`
-  background: ${theme.colors.accentTextColor};
+  background: ${theme.colors.primaryBg};
   max-width: 30%;
   width: 100%;
 

@@ -3,7 +3,11 @@ import {SectionTitle} from '@/components/SectionTitle.tsx'
 import {SocialList} from '@/components/socialList/SocialList.tsx';
 import TelegramIcon from '../../../assets/icons/telegram.svg?react'
 import GmailIcon from '../../../assets/icons/gmail.svg?react'
+import VkIcon from '../../../assets/icons/vk.svg?react'
+import ZoomIcon from '../../../assets/icons/zoom.svg?react'
 import {Button} from "@/components/Button.tsx";
+import {Container} from "@/components/Container.tsx";
+import {theme} from "@/styles/Theme.ts";
 
 const socialItems = [
   {
@@ -13,45 +17,115 @@ const socialItems = [
   },
   {
     icon: GmailIcon,
-    href: 'https://t.me/Arina_Dovydova',
+    href: 'mailto:arina.dovydova95@gmail.com',
     label: 'Gmail',
   },
+  {
+    icon: VkIcon,
+    href: 'https://vk.ru/id183793786',
+    label: 'vk',
+  },
+  {
+    icon: ZoomIcon,
+    href: 'https://zoom.us/j/your-meeting-id',
+    label: 'zoom',
+  },
+
 ];
 
 export const Contact = () => {
   return (
     <StyledContacts>
-      <SectionTitle>Let’s work together</SectionTitle>
-      <p>I’m available for freelance work. Have any projects in your mind? Just feel free to contact me</p>
-      <SocialList items={socialItems} />
+      <Container>
+        <SectionTitle>Let’s work together</SectionTitle>
 
+        <StyledContent>
+          <StyledInfo>
+            <p>I’m available for freelance work.<br /> Have any projects in your mind? <br />Just feel free to contact me
+            </p>
+            <SocialList items={socialItems} />
+          </StyledInfo>
 
-      <StyledForm>
-        <Field placeholder={"name"} />
-        <Field placeholder={"subject"} />
-        <Field
-          placeholder={"message"}
-          as={"textarea"}
-        />
-        <Button type="submit">Send message</Button>
-      </StyledForm>
+          <StyledForm>
+            <Field placeholder={"name"} />
+            <Field placeholder={"subject"} />
+            <Field
+              placeholder={"message"}
+              as={"textarea"}
+            />
+            <Button type="submit">Send message</Button>
+          </StyledForm>
+
+        </StyledContent>
+      </Container>
     </StyledContacts>
   );
 };
 
 
 const StyledContacts = styled.section`
-  min-height: 50vh;
+  background-color: ${theme.colors.primaryBg};
 
 `
-const StyledForm = styled.form`
-  max-width: 500px;
+const StyledContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  justify-items: center;
+
+  margin-top: 40px;
+`
+const StyledInfo = styled.div`
+  max-width: 540px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 24px;
+
+
+  p {
+    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 0.01em;
+    text-align: start;
+    line-height: 1.6;
+    margin: 0;
+  }
+`
+const StyledForm = styled.form`
+  max-width: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 16px;
   margin: 0 auto;
+
+  textarea {
+    resize: none;
+    height: 150px;
+  }
 `
 const Field = styled.input`
+  width: 100%;
+  background-color: ${theme.colors.secondaryBg};
+  border: 1px solid ${theme.colors.font};
+  padding: 7px 15px;
 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+
+  color: ${theme.colors.titleColor};
+
+  &::placeholder {
+    color: ${theme.colors.font};
+    text-transform: capitalize;
+  }
+
+  &:focus-visible {
+    outline: 1px solid ${theme.colors.font};
+  }
 `

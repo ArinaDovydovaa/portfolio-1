@@ -6,6 +6,7 @@ import {Work} from './work/Work'
 import socialImg from '../../../assets/images/social-img.webp'
 import timerImg from '../../../assets/images/timer-img.webp'
 import {Container} from "@/components/Container.tsx";
+import {theme} from "@/styles/Theme.ts";
 
 
 const worksItem = ["All", "Landing page", "React", "spa"]
@@ -21,7 +22,7 @@ export const Works = () => {
           justify={'space-between'}
           align={"flex-start"}
         >
-         
+
           <Work
             title={"Social Network"}
             src={socialImg}
@@ -45,7 +46,7 @@ export const Works = () => {
 };
 
 const StyledWorks = styled.section`
-
+  background-color: ${theme.colors.secondaryBg};
 
 `
 

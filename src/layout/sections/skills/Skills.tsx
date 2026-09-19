@@ -10,6 +10,7 @@ import JsIcon from '../../../assets/icons/js.svg?react';
 import ReactIcon from '../../../assets/icons/react.svg?react';
 import FigmaIcon from '../../../assets/icons/figma.svg?react';
 import GinHubIcon from '../../../assets/icons/github.svg?react';
+import {theme} from "@/styles/Theme.ts";
 
 
 export const Skills = () => {
@@ -60,7 +61,7 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
-
+  background-color: ${theme.colors.primaryBg};
 
 `
 
