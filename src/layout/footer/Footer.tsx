@@ -11,7 +11,7 @@ export const Footer = () => {
       <Container>
         <FooterContent>
           <Logo />
-          <Copyright>© {new Date().getFullYear()} Templates Jungle. All rights reserved</Copyright>
+          <Copyright>© {new Date().getFullYear()} Арина Дaвыдова. Все права защищены.</Copyright>
           <MenuCell>
             <Menu />
           </MenuCell>

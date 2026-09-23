@@ -4,8 +4,8 @@ export type MenuItem = {
 }
 
 export const menuItems: MenuItem[] = [
-  {title: 'Home', href: '#home'},
-  {title: 'Skills', href: '#skills'},
-  {title: 'Works', href: '#works'},
-  {title: 'Contact', href: '#contacts'},
+  {title: 'Главная', href: '#home'},
+  {title: 'Навыки', href: '#skills'},
+  {title: 'Проекты', href: '#works'},
+  {title: 'Контакты', href: '#contacts'},
 ]

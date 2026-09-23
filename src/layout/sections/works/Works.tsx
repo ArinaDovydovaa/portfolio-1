@@ -9,28 +9,28 @@ import {Container} from "@/components/Container.tsx";
 import {theme} from "@/styles/Theme.ts";
 
 
-const workItems = ["All", "Landing page", "React", "spa"]
+const workItems = ["Все", "Лендинги", "React", "SPA"]
 
 export const Works = () => {
   return (
 
     <StyledWorks id="works">
       <Container>
-        <SectionTitle>Works</SectionTitle>
+        <SectionTitle>Проекты</SectionTitle>
         <TabMenu menuItems={workItems} />
         <FlexWrapper
           justify={'space-between'}
           align={"flex-start"}
         >
           <Work
-            title={"Social Network"}
+            title={"Социальная сеть"}
             src={socialImg}
-            text={"his is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
+            text={"React-приложение с профилем, диалогами и переиспользуемыми компонентами."}
           />
           <Work
-            title={"Timer"}
+            title={"Таймер"}
             src={timerImg}
-            text={"his is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
+            text={"Интерактивный таймер с настройкой времени и отображением обратного отсчета."}
           />
           <Work
             title={"Project Tile goes here"}

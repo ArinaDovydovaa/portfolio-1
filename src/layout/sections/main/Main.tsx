@@ -8,9 +8,10 @@ export const Main = () => {
     <StyledMain id="home">
       <Container>
         <MainContent>
-          <MainSpan>Hello, I’m</MainSpan>
-          <MyName>Arina Dovydova</MyName>
-          <MainTitle>Front-end Developer</MainTitle>
+          <MainSpan>Привет, я </MainSpan>
+          <MyName>Арина</MyName>
+          <MainTitle>Frontend-разработчик</MainTitle>
+          <MainSubtitle>Создаю адаптивные и аккуратные интерфейсы на React, TypeScript и styled-components.</MainSubtitle>
         </MainContent>
       </Container>
     </StyledMain>
@@ -36,13 +37,11 @@ const MainContent = styled.div`
 
 `
 
-
 const MainSpan = styled.span`
   color: ${theme.colors.secondaryTitleColor};
   font-size: 40px;
 
 `
-
 const MyName = styled.h2`
   font-weight: 600;
   font-size: 50px;
@@ -55,6 +54,9 @@ const MainTitle = styled.h1`
   font-size: 60px;
   letter-spacing: 0.02em;
   color: ${theme.colors.secondaryTitleColor};
+
+`
+const MainSubtitle = styled.h3`
 
 `
 

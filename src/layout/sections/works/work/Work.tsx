@@ -17,21 +17,21 @@ export const Work = (props: WorkPropsType) => {
           src={props.src}
           alt=""
         />
-        <Button>view project</Button>
+        <Button>смотреть проект</Button>
       </ImageWrapper>
 
       <Description>
         <Title>{props.title}</Title>
         <Text>{props.text}</Text>
-        <Link href={"#"}>demo</Link>
-        <Link href={"#"}>code</Link>
+        {/*<Link href={"#"}>Демо</Link>*/}
+        <Link href={"#"}>GitHub</Link>
       </Description>
     </StyledWork>
   );
 };
 
 const Link = styled.a`
-    // color: ${theme.colors.small};
+  color: ${theme.colors.small};
 `
 const StyledWork = styled.div`
   background: ${theme.colors.primaryBg};

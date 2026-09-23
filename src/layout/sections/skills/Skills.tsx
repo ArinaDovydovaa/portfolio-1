@@ -17,7 +17,7 @@ export const Skills = () => {
   return (
     <StyledSkills id="skills">
       <Container>
-        <SectionTitle>Skills</SectionTitle>
+        <SectionTitle>Навыки</SectionTitle>
         <FlexWrapper
           // wrap={"wrap"}
           justify={"space-between"}
@@ -26,32 +26,32 @@ export const Skills = () => {
           <Skill
             icon={HtmlIcon}
             title={"html"}
-            description={"consectetur adipiscing elit duis tristique"}
+            description={"Семантическая разметка, формы, доступность"}
           />
           <Skill
             icon={CssIcon}
             title={"css"}
-            description={"consectetur adipiscing elit duis tristique"}
+            description={"Адаптивная верстка, Flexbox, Grid, анимации"}
           />
           <Skill
             icon={JsIcon}
             title={"js"}
-            description={"consectetur adipiscing elit duis tristique"}
+            description={"ES6+, работа с данными, события, асинхронность"}
           />
           <Skill
             icon={ReactIcon}
             title={"react"}
-            description={"consectetur adipiscing elit duis tristique"}
+            description={"Компоненты, props, state, hooks"}
           />
           <Skill
             icon={FigmaIcon}
             title={"figma"}
-            description={"consectetur adipiscing elit duis tristique"}
+            description={"Работа с макетами, отступами и UI-деталями"}
           />
           <Skill
             icon={GitHubIcon}
             title={"GitHub"}
-            description={"consectetur adipiscing elit duis tristique"}
+            description={"Git, ветки, коммиты, pull request"}
           />
         </FlexWrapper>
       </Container>

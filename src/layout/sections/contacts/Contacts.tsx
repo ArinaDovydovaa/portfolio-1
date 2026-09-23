@@ -41,19 +41,20 @@ export const Contacts = () => {
 
         <StyledContent>
           <StyledInfo>
-            <p>I’m available for freelance work. Have any projects in your mind? Just feel free to contact me
+            <p>Я открыта к новым проектам)
+              Если вам нужен аккуратный интерфейс с вниманием к деталям — напишите мне.
             </p>
             <SocialList items={socialItems} />
           </StyledInfo>
 
           <StyledForm>
-            <Field placeholder={"name"} />
-            <Field placeholder={"subject"} />
+            <Field placeholder={"Имя"} />
+            <Field placeholder={"Тема"} />
             <Field
-              placeholder={"message"}
+              placeholder={"Сообщение"}
               as={"textarea"}
             />
-            <Button type="submit">Send message</Button>
+            <Button type="submit">Отправить</Button>
           </StyledForm>
 
         </StyledContent>
