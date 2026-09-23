@@ -19,9 +19,9 @@ export const Skills = () => {
       <Container>
         <SectionTitle>Навыки</SectionTitle>
         <FlexWrapper
-          // wrap={"wrap"}
-          justify={"space-between"}
-          gap={"10px"}
+          wrap={"wrap"}
+          justify={"space-around"}
+          gap={"30px"}
         >
           <Skill
             icon={HtmlIcon}

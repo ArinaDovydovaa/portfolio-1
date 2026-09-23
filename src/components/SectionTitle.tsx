@@ -14,7 +14,7 @@ export const SectionTitle = styled.h2`
   &:before {
     content: '';
     display: inline-block;
-    width: 35%;
+    width: 50%;
     height: 1px;
     background-color: ${theme.colors.accentColor};
 

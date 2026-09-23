@@ -19,8 +19,10 @@ export const Works = () => {
         <SectionTitle>Проекты</SectionTitle>
         <TabMenu menuItems={workItems} />
         <FlexWrapper
-          justify={'space-between'}
-          align={"flex-start"}
+          justify="center"
+          align="flex-start"
+          wrap="wrap"
+          gap="30px"
         >
           <Work
             title={"Социальная сеть"}

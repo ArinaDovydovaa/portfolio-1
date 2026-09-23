@@ -44,14 +44,14 @@ const Button = styled.button`
   padding: 5px;
   color: ${theme.colors.font};
 
-  border: 1px solid transparent;
-  border-radius: 2px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 2px 40px 0 rgba(187, 187, 187, 0.25);
+  border-radius: 5px;
   transition: transform 0.2s ease,
   border-color 0.2s ease,
   box-shadow 0.2s ease;
 
   &:hover {
-    border-color: #868686;
     transform: translateY(-3px) scale(1.06);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.16);
   }

@@ -32,19 +32,17 @@ export const Work = (props: WorkPropsType) => {
 
 const Link = styled.a`
   color: ${theme.colors.small};
+  border: 1px solid #ebebeb;
+  box-shadow: 0 2px 40px 0 rgba(187, 187, 187, 0.25);
+  border-radius: 5px;
+  padding: 5px;
 `
 const StyledWork = styled.div`
   background: ${theme.colors.primaryBg};
-  max-width: 30%;
+  flex: 1 1 300px;
+  max-width: 380px;
   width: 100%;
-
-  ${Link} {
-    padding: 10px 0;
-
-    & + ${Link} {
-      margin-left: 10px;
-    }
-  }
+}
 `
 
 const ImageWrapper = styled.div`
@@ -84,18 +82,15 @@ const Image = styled.img`
 `
 
 const Description = styled.div`
-  padding: 25px 20px;
-  //display: flex;
-  //flex-direction: column;
-  //justify-content: center;
-  //align-items: center;
+  padding: 20px;
+  
 `
 
 const Title = styled.h3`
 
 `
 const Text = styled.p`
-  margin: 10px 0 8px;`
+  padding: 10px 0;`
 
 
 

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import photo from '../../../assets/images/my-photo.webp'
 import {Container} from "@/components/Container.tsx";
 import {theme} from "@/styles/Theme.ts";
+import {Button} from "@/components/Button.tsx";
 
 export const Main = () => {
   return (
@@ -12,6 +13,7 @@ export const Main = () => {
           <MyName>Арина</MyName>
           <MainTitle>Frontend-разработчик</MainTitle>
           <MainSubtitle>Создаю адаптивные и аккуратные интерфейсы на React, TypeScript и styled-components.</MainSubtitle>
+          <Button>связаться</Button>
         </MainContent>
       </Container>
     </StyledMain>
@@ -56,7 +58,7 @@ const MainTitle = styled.h1`
   color: ${theme.colors.secondaryTitleColor};
 
 `
-const MainSubtitle = styled.h3`
+const MainSubtitle = styled.p`
 
 `
 

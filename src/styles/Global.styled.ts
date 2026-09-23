@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     overflow-x: hidden;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Source+Sans+3', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 
   ul {
     list-style: none;
-    
+
   }
 
   button {
@@ -46,6 +46,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
   p {
+    font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.4;

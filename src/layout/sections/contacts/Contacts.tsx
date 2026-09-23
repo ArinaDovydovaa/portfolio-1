@@ -35,9 +35,9 @@ const socialItems = [
 
 export const Contacts = () => {
   return (
-    <StyledContacts id="contacts">
+    <StyledContacts id="contact">
       <Container>
-        <StyledSectionTitle>Let’s work together</StyledSectionTitle>
+        <StyledSectionTitle>Давай'те работать вместе!</StyledSectionTitle>
 
         <StyledContent>
           <StyledInfo>
@@ -72,10 +72,8 @@ const StyledSectionTitle = styled(SectionTitle)`
 `
 const StyledContent = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
   justify-items: center;
-
   margin-top: 40px;
 `
 const StyledInfo = styled.div`

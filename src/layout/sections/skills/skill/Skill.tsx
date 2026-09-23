@@ -24,10 +24,19 @@ export const Skill = (props: SkillPropsType) => {
 };
 
 const StyledSkill = styled.div`
+  width: 300px;
+  min-height: 200px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 2px 40px 0 rgba(187, 187, 187, 0.25);
+  background: #fdfdfd;
+
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 15px;
+  padding: 15px;
+  text-align: center;
 
 
 `
