@@ -23,7 +23,7 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
   background-color: ${theme.colors.titleColor};
-  padding: 20px;
+  padding: 20px 0;
 `
 
 const FooterContent = styled.div`
