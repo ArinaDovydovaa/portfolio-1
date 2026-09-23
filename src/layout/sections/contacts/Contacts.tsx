@@ -33,15 +33,15 @@ const socialItems = [
 
 ];
 
-export const Contact = () => {
+export const Contacts = () => {
   return (
-    <StyledContacts>
+    <StyledContacts id="contacts">
       <Container>
         <StyledSectionTitle>Let’s work together</StyledSectionTitle>
 
         <StyledContent>
           <StyledInfo>
-            <p>I’m available for freelance work.<br /> Have any projects in your mind? <br />Just feel free to contact me
+            <p>I’m available for freelance work. Have any projects in your mind? Just feel free to contact me
             </p>
             <SocialList items={socialItems} />
           </StyledInfo>
@@ -65,7 +65,6 @@ export const Contact = () => {
 
 const StyledContacts = styled.section`
   background-color: ${theme.colors.titleColor};
-
 `
 const StyledSectionTitle = styled(SectionTitle)`
   color: ${theme.colors.secondaryTitleColor};
@@ -79,7 +78,7 @@ const StyledContent = styled.div`
   margin-top: 40px;
 `
 const StyledInfo = styled.div`
-  max-width: 540px;
+  max-width: 500px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -94,6 +93,7 @@ const StyledInfo = styled.div`
     text-align: start;
     line-height: 1.6;
     margin: 0;
+
   }
 `
 const StyledForm = styled.form`
@@ -115,6 +115,7 @@ const Field = styled.input`
   background-color: ${theme.colors.secondaryBg};
   border: 1px solid ${theme.colors.font};
   padding: 7px 15px;
+  border-radius: 10px;
 
   font-family: 'Poppins', sans-serif;
   font-weight: 400;

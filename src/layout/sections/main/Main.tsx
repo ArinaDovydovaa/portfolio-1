@@ -5,7 +5,7 @@ import {theme} from "@/styles/Theme.ts";
 
 export const Main = () => {
   return (
-    <StyledMain>
+    <StyledMain id="home">
       <Container>
         <MainContent>
           <MainSpan>Hello, I’m</MainSpan>

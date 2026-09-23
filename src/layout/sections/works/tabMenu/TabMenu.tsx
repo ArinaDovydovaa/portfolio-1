@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {theme} from "@/styles/Theme.ts";
 
 type MenuPropsType = {
   menuItems: Array<string>
@@ -11,7 +12,7 @@ export const TabMenu = (props: MenuPropsType) => {
         {props.menuItems.map((item, index) => {
           return (
             <ListItem key={index}>
-              <Link href="">{item}</Link>
+              <Button type="button">{item}</Button>
             </ListItem>
           )
         })}
@@ -34,13 +35,14 @@ const StyledTabMenu = styled.nav`
 const ListItem = styled.li`
 
 `
-const Link = styled.a`
+const Button = styled.button`
   display: inline-block;
 
   font-size: 20px;
   letter-spacing: 0.01em;
   text-transform: uppercase;
   padding: 5px;
+  color: ${theme.colors.font};
 
   border: 1px solid transparent;
   border-radius: 2px;

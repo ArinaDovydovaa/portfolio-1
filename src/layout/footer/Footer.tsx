@@ -2,25 +2,28 @@ import styled from 'styled-components'
 import {Logo} from "@/components/logo/Logo.tsx";
 import {Menu} from "@/components/menu/Menu.tsx";
 import {theme} from "@/styles/Theme.ts";
+import {Container} from "@/components/Container.tsx";
 
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <FooterContent>
-        <Logo />
-        <Copyright>© {new Date().getFullYear()} Templates Jungle. All rights reserved</Copyright>
-        <MenuCell>
-          <Menu />
-        </MenuCell>
-      </FooterContent>
+      <Container>
+        <FooterContent>
+          <Logo />
+          <Copyright>© {new Date().getFullYear()} Templates Jungle. All rights reserved</Copyright>
+          <MenuCell>
+            <Menu />
+          </MenuCell>
+        </FooterContent>
+      </Container>
     </StyledFooter>
   );
 };
 
 const StyledFooter = styled.footer`
   background-color: ${theme.colors.titleColor};
-  padding: 20px 40px;
+  padding: 20px;
 `
 
 const FooterContent = styled.div`
@@ -37,4 +40,4 @@ const MenuCell = styled.div`
 const Copyright = styled.small`
   color: ${theme.colors.font};
   font-size: 18px;
-  white-space: nowrap`
+`

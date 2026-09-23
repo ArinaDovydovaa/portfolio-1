@@ -1,9 +1,9 @@
-import React from 'react';
+import type {ComponentType, SVGProps} from 'react';
 import styled from 'styled-components';
 
 
 type SkillPropsType = {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   title: string
   description: string
 }

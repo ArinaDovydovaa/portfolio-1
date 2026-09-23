@@ -4,8 +4,12 @@ import {theme} from "@/styles/Theme.ts";
 export const Button = styled.button`
   width: 150px;
   height: 40px;
-  background: rgba(251, 168, 32, 0.8); // 60%
+  background: rgba(251, 168, 32, 0.7); // 60%
+  transition: 0.3s ease;
 
+  &:hover {
+    opacity: 0.85;
+  }
 
   color: ${theme.colors.primaryBg};
   font-weight: 600;

@@ -9,13 +9,13 @@ import CssIcon from '../../../assets/icons/css.svg?react';
 import JsIcon from '../../../assets/icons/js.svg?react';
 import ReactIcon from '../../../assets/icons/react.svg?react';
 import FigmaIcon from '../../../assets/icons/figma.svg?react';
-import GinHubIcon from '../../../assets/icons/github.svg?react';
+import GitHubIcon from '../../../assets/icons/github.svg?react';
 import {theme} from "@/styles/Theme.ts";
 
 
 export const Skills = () => {
   return (
-    <StyledSkills>
+    <StyledSkills id="skills">
       <Container>
         <SectionTitle>Skills</SectionTitle>
         <FlexWrapper
@@ -49,7 +49,7 @@ export const Skills = () => {
             description={"consectetur adipiscing elit duis tristique"}
           />
           <Skill
-            icon={GinHubIcon}
+            icon={GitHubIcon}
             title={"GitHub"}
             description={"consectetur adipiscing elit duis tristique"}
           />
@@ -62,6 +62,5 @@ export const Skills = () => {
 
 const StyledSkills = styled.section`
   background-color: ${theme.colors.primaryBg};
-
 `
 
