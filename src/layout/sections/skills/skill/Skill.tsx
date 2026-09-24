@@ -14,65 +14,63 @@ export const Skill = (props: SkillPropsType) => {
   return (
     <StyledSkill>
       <IconWrapper>
-        <Icon
-          width={48}
-          height={48}
-        />
+        <Icon />
       </IconWrapper>
-      <SkillTitle>{props.title}</SkillTitle>
-      <SkillText>{props.description}</SkillText>
+
+      <SkillContent>
+        <SkillTitle>{props.title}</SkillTitle>
+        <SkillText>{props.description}</SkillText>
+      </SkillContent>
     </StyledSkill>
   );
 };
 
 const StyledSkill = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 24px;
+  width: 200px;
+  min-height: 96px;
+  padding: 18px 20px;
 
-  background: ${theme.colors.primaryBg};
-  border: 1px solid #ebebeb;
-  border-radius: 14px;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  background-color: ${theme.colors.primaryBg};
+  border: 1px solid rgba(37, 37, 37, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 14px 35px rgba(37, 37, 37, 0.06);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: translateY(-3px);
-    border-color: ${theme.colors.borderHover};
-    box-shadow: ${theme.colors.shadowSm}
+    transform: translateY(-5px);
+    box-shadow: 0 22px 50px rgba(37, 37, 37, 0.1);
   }
+
 `
 
 const IconWrapper = styled.div`
-  width: 68px;
-  height: 68px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 16px;
-  border-radius: 12px;
-  background: ${theme.colors.secondaryBg};
-  transition: background .25s ease;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
 
-  ${StyledSkill}:hover & {
-    background: ${theme.colors.tertiaryBg};
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
-
-
 `
+
+const SkillContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`
+
 const SkillTitle = styled.h3`
-  margin: 0 0 6px;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: 1.3;
+  text-align: left;
 `
 const SkillText = styled.p`
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.5;
-  min-height: calc(13px * 1.5 * 2); /* 2 строки — выравнивает низ карточек */
+  text-align: left;
 `
 
 

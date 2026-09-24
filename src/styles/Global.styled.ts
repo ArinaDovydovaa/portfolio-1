@@ -48,8 +48,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h3 {
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.35;
     letter-spacing: 0.01em;
     text-align: center;
     color: ${theme.colors.DarkTextColor};
