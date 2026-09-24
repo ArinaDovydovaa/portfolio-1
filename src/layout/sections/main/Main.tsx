@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import photo from '../../../assets/images/main-photo.webp'
 import {Container} from "@/components/Container.tsx";
 import {theme} from "@/styles/Theme.ts";
-import {Button} from "@/components/Button.tsx";
+import {ButtonAccent} from "@/components/ButtonAccent.tsx";
 
 export const Main = () => {
   return (
@@ -12,7 +12,7 @@ export const Main = () => {
           <MainIntro>Привет, я <Accent>Арина</Accent></MainIntro>
           <MainTitle>Frontend-разработчик</MainTitle>
           <MainSubtitle>Создаю адаптивные и аккуратные интерфейсы на React, TypeScript и styled-components.</MainSubtitle>
-          <Button>связаться</Button>
+          <ButtonAccent>связаться</ButtonAccent>
         </MainContent>
       </Container>
     </StyledMain>
@@ -33,7 +33,7 @@ const MainContent = styled.div`
 `
 const MainIntro = styled.p`
   margin-bottom: 12px;
-  color: ${theme.colors.secondaryTitleColor};
+  color: ${theme.colors.LightTitleColor};
   font-size: 28px;
   font-weight: 500;
   line-height: 1.2;
@@ -45,7 +45,7 @@ const Accent = styled.span`
 `
 const MainTitle = styled.h1`
   margin: 0;
-  color: ${theme.colors.secondaryTitleColor};
+  color: ${theme.colors.LightTitleColor};
   font-size: 68px;
   font-weight: 700;
   line-height: 1;
@@ -54,7 +54,7 @@ const MainTitle = styled.h1`
 const MainSubtitle = styled.p`
   max-width: 520px;
   margin: 24px 0 32px;
-  color: ${theme.colors.font};
+  color: ${theme.colors.LightTextColor};
   font-size: 18px;
   line-height: 1.65;
 `

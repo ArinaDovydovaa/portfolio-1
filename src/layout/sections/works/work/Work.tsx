@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {Button} from "@/components/Button.tsx";
+import {ButtonAccent} from "@/components/ButtonAccent.tsx";
 import {theme} from "@/styles/Theme.ts";
 
 
@@ -17,7 +17,7 @@ export const Work = (props: WorkPropsType) => {
           src={props.src}
           alt=""
         />
-        <Button>смотреть проект</Button>
+        <ButtonAccent>смотреть проект</ButtonAccent>
       </ImageWrapper>
 
       <Description>
@@ -61,12 +61,12 @@ const ImageWrapper = styled.div`
       backdrop-filter: blur(4px);
     }
 
-    ${Button} {
+    ${ButtonAccent} {
       opacity: 1;
     }
   }
 
-  ${Button} {
+  ${ButtonAccent} {
     opacity: 0;
     position: absolute;
     left: 50%;
@@ -83,7 +83,7 @@ const Image = styled.img`
 
 const Description = styled.div`
   padding: 20px;
-  
+
 `
 
 const Title = styled.h3`

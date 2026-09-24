@@ -5,7 +5,7 @@ import TelegramIcon from '../../../assets/icons/telegram.svg?react'
 import GmailIcon from '../../../assets/icons/gmail.svg?react'
 import VkIcon from '../../../assets/icons/vk.svg?react'
 import ZoomIcon from '../../../assets/icons/zoom.svg?react'
-import {Button} from "@/components/Button.tsx";
+import {ButtonAccent} from "@/components/ButtonAccent.tsx";
 import {Container} from "@/components/Container.tsx";
 import {theme} from "@/styles/Theme.ts";
 
@@ -54,7 +54,7 @@ export const Contacts = () => {
               placeholder={"Сообщение"}
               as={"textarea"}
             />
-            <Button type="submit">Отправить</Button>
+            <ButtonAccent type="submit">Отправить</ButtonAccent>
           </StyledForm>
 
         </StyledContent>

@@ -5,7 +5,7 @@ export const SectionTitle = styled.h2`
   font-weight: 600;
   font-size: 40px;
   text-align: center;
-  color: ${theme.colors.titleColor};
+  color: ${theme.colors.DarkTitleColor};
   padding: 30px 0;
   margin-bottom: 30px;
 
