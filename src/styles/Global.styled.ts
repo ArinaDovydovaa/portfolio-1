@@ -18,26 +18,19 @@ export const GlobalStyle = createGlobalStyle`
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: ${theme.colors.font};
-    background-color: ${theme.colors.secondaryBg};
+    color: ${theme.colors.textPrimary};
+    background-color: ${theme.colors.primaryBg};
     line-height: 1.2;
   }
 
   a {
     text-decoration: none;
-    color: ${theme.colors.secondaryTitleColor};
+    color: ${theme.colors.LightTextColor};
   }
 
   ul {
     list-style: none;
 
-  }
-
-  button {
-    background-color: unset;
-    border: none;
-    cursor: pointer;
-    color: ${theme.colors.font};
   }
 
   section {
@@ -51,14 +44,14 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 14px;
     line-height: 1.4;
     letter-spacing: 0.01em;
-    color: ${theme.colors.font};
+    color: ${theme.colors.textPrimary};
   }
 
   h3 {
     font-weight: 600;
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: 0.01em;
     text-align: center;
-    color: ${theme.colors.small};
+    color: ${theme.colors.DarkTextColor};
   }
 `
