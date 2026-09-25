@@ -25,8 +25,8 @@ export const Button = styled.button`
 
   &:hover {
     transform: translateY(-3px);
-    border-color: ${theme.colors.borderHover}; /* чуть темнее */
-    box-shadow: ${theme.colors.shadowSm} /* мягкая тень */
+    border-color: ${theme.colors.borderHover}
+    box-shadow: ${theme.colors.shadowSm}
   }
 
   &:active {

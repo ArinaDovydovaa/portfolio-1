@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Logo = () => {
   return (
-    <LogoLink href="home">
+    <LogoLink href="#home">
       <LogoImg
         src={logo}
         alt="Arina Dovydova"

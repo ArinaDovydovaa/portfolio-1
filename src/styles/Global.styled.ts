@@ -1,5 +1,5 @@
 import {createGlobalStyle} from 'styled-components';
-import {theme} from "@/styles/Theme.ts";
+import {theme} from "@/styles/Theme";
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${theme.colors.LightTextColor};
+    color: ${theme.colors.lightTextColor};
   }
 
   ul {
@@ -34,18 +34,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   section {
-    padding: 50px 0;
+    padding: 70px 0;
   }
-
 
   p {
     margin: 0;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.6;
     letter-spacing: 0.01em;
-    color: ${theme.colors.textPrimary};
+    color: ${theme.colors.textSecondary};
   }
 
   h3 {
@@ -54,6 +53,6 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.35;
     letter-spacing: 0.01em;
     text-align: center;
-    color: ${theme.colors.DarkTextColor};
+    color: ${theme.colors.darkTitleColor};
   }
 `

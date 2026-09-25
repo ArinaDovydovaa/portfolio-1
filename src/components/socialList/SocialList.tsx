@@ -1,7 +1,8 @@
+import type {ComponentType, SVGProps} from 'react';
 import styled from 'styled-components';
 
 type SocialItemType = {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
   href: string
   label: string
 }

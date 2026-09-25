@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import styled, {css} from 'styled-components';
 import {Logo} from "../../components/logo/Logo";
 import {Container} from "@/components/Container";
-import {FlexWrapper} from "@/components/FlexWrapper.tsx";
+import {FlexWrapper} from "@/components/FlexWrapper";
 import {Menu} from "@/components/menu/Menu";
 
 

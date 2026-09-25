@@ -2,17 +2,21 @@ import styled from 'styled-components'
 import {theme} from "@/styles/Theme.ts";
 
 export const ButtonAccent = styled.button`
-  padding: 15px;
+  min-width: 130px;
+  padding: 12px 22px;
+
   background: transparent;
   border: 1px solid ${theme.colors.accentColor};
   border-radius: 34px;
-  transition: all 0.3s ease;
+  //transition: all 0.3s ease;
 
-  color: ${theme.colors.primaryBg};
+  color: ${theme.colors.lightTextColor};
   font-size: 14px;
+  font-weight: 600;
   letter-spacing: 0.02em;
-  text-align: center;
   text-transform: uppercase;
+
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     box-shadow: 0 0 20px 1px ${theme.colors.accentColor};

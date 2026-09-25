@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import photo from '../../../assets/images/main-photo.webp'
-import {Container} from "@/components/Container.tsx";
-import {theme} from "@/styles/Theme.ts";
-import {ButtonAccent} from "@/components/ButtonAccent.tsx";
+import {Container} from "@/components/Container";
+import {theme} from "@/styles/Theme";
+import {ButtonAccent} from "@/components/ButtonAccent";
 
 export const Main = () => {
   return (
@@ -19,23 +19,24 @@ export const Main = () => {
   );
 };
 const StyledMain = styled.section`
-  min-height: 700px;
+  min-height: 720px;
+  padding: 0;
   background-image: url(${photo});
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
 `
 const MainContent = styled.div`
-  max-width: 550px;
-  padding: 0 100px;
+  max-width: 560px;
+  margin-left: 80px;
+
 `
-const MainIntro = styled.p`
+const MainIntro = styled.h2`
   margin-bottom: 12px;
-  color: ${theme.colors.LightTitleColor};
+  color: ${theme.colors.lightTitleColor};
   font-size: 28px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
 `
 const Accent = styled.span`
@@ -44,19 +45,17 @@ const Accent = styled.span`
   font-size: 35px;
 `
 const MainTitle = styled.h1`
-  margin: 0;
-  color: ${theme.colors.LightTitleColor};
+  color: ${theme.colors.lightTitleColor};
   font-size: 68px;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 0.98;
 `
 const MainSubtitle = styled.p`
-  max-width: 520px;
+  max-width: 460px;
   margin: 24px 0 32px;
-  color: ${theme.colors.LightTextColor};
+  color: ${theme.colors.lightTextColor};
+  opacity: 0.75;
   font-size: 18px;
-  line-height: 1.65;
+  line-height: 1.7;
 `
 
 

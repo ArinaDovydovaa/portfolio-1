@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import {SectionTitle} from '@/components/SectionTitle.tsx'
-import {SocialList} from '@/components/socialList/SocialList.tsx';
+import {SectionTitle} from '@/components/SectionTitle'
+import {SocialList} from '@/components/socialList/SocialList';
 import TelegramIcon from '../../../assets/icons/telegram.svg?react'
 import GmailIcon from '../../../assets/icons/gmail.svg?react'
 import VkIcon from '../../../assets/icons/vk.svg?react'
 import ZoomIcon from '../../../assets/icons/zoom.svg?react'
-import {ButtonAccent} from "@/components/ButtonAccent.tsx";
-import {Container} from "@/components/Container.tsx";
-import {theme} from "@/styles/Theme.ts";
+import {ButtonAccent} from "@/components/ButtonAccent";
+import {Container} from "@/components/Container";
+import {theme} from "@/styles/Theme";
 
 const socialItems = [
   {
@@ -37,7 +37,12 @@ export const Contacts = () => {
   return (
     <StyledContacts id="contact">
       <Container>
-        <StyledSectionTitle>Давай'те работать вместе!</StyledSectionTitle>
+        <SectionTitle
+          align="left"
+          variant="light"
+        >
+          Давай'те работать вместе
+        </SectionTitle>
 
         <StyledContent>
           <StyledInfo>
@@ -65,15 +70,14 @@ export const Contacts = () => {
 
 
 const StyledContacts = styled.section`
-  background-color: ${theme.colors.titleColor};
+  padding: 80px 0;
+  background-color: ${theme.colors.darkBg};
 `
-const StyledSectionTitle = styled(SectionTitle)`
-  color: ${theme.colors.secondaryTitleColor};
-`
+
 const StyledContent = styled.div`
   display: grid;
   grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
-  justify-items: center;
+  gap: 48px;
   margin-top: 40px;
 `
 const StyledInfo = styled.div`
@@ -84,10 +88,9 @@ const StyledInfo = styled.div`
   align-items: center;
   gap: 24px;
 
-
   p {
     font-weight: 600;
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: 0.01em;
     text-align: start;
     line-height: 1.6;
@@ -111,24 +114,22 @@ const StyledForm = styled.form`
 `
 const Field = styled.input`
   width: 100%;
-  background-color: ${theme.colors.secondaryBg};
-  border: 1px solid ${theme.colors.font};
+  background-color: ${theme.colors.tertiaryBg};
+  border: 1px solid ${theme.colors.textMuted};
   padding: 7px 15px;
   border-radius: 10px;
-
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.05em;
+  color: ${theme.colors.darkTitleColor};
 
-  color: ${theme.colors.titleColor};
 
   &::placeholder {
-    color: ${theme.colors.font};
+    color: ${theme.colors.textPrimary};
     text-transform: capitalize;
   }
 
   &:focus-visible {
-    outline: 1px solid ${theme.colors.font};
+    outline: 1px solid ${theme.colors.textPrimary};
   }
 `

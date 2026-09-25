@@ -7,5 +7,5 @@ export const menuItems: MenuItem[] = [
   {title: 'Главная', href: '#home'},
   {title: 'Навыки', href: '#skills'},
   {title: 'Проекты', href: '#works'},
-  {title: 'Контакты', href: '#contacts'},
+  {title: 'Контакты', href: '#contact'},
 ]

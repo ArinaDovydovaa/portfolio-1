@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import {SectionTitle} from '@/components/SectionTitle.tsx'
+import {SectionTitle} from '@/components/SectionTitle'
 import {Work} from './work/Work'
-import {Container} from "@/components/Container.tsx";
+import {Container} from "@/components/Container";
 import {theme} from "@/styles/Theme.ts";
 
 import socialImg from '../../../assets/images/social-network.webp'
@@ -16,8 +16,7 @@ export const Works = () => {
   return (
     <StyledWorks id="works">
       <Container>
-        <SectionTitle>Проекты</SectionTitle>
-        <SectionText>hhhhh</SectionText>
+        <SectionTitle align="left">Проекты</SectionTitle>
 
         <WorksGrid>
           <Work
@@ -63,21 +62,13 @@ export const Works = () => {
 };
 
 const StyledWorks = styled.section`
-  background-color: ${theme.colors.secondaryBg};
+  background-color: ${theme.colors.primaryBg};
 
-`
-
-const SectionText = styled.h2`
-  max-width: 560px;
-  margin: 0 auto 40px;
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.6;
 `
 
 const WorksGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
+  gap: 32px;
 `
 

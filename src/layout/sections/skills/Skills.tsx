@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {SectionTitle} from '@/components/SectionTitle.tsx';
+import {SectionTitle} from '@/components/SectionTitle';
 import {Skill} from './skill/Skill'
-import {Container} from "@/components/Container.tsx";
+import {Container} from "@/components/Container";
 
 import HtmlIcon from '../../../assets/icons/html.svg?react';
 import CssIcon from '../../../assets/icons/css.svg?react';
@@ -12,14 +12,15 @@ import GitHubIcon from '../../../assets/icons/github.svg?react';
 import StyledComponentsIcon
   from '../../../assets/icons/styled-components.svg?react';
 import ViteIcon from '../../../assets/icons/vite.svg?react';
-import {theme} from "@/styles/Theme.ts";
+import TypeScriptIcon from '../../../assets/icons/type-script.svg?react';
+import {theme} from "@/styles/Theme";
 
 
 export const Skills = () => {
   return (
     <StyledSkills id="skills">
       <Container>
-        <SectionTitle>Навыки</SectionTitle>
+        <SectionTitle align="left">Навыки</SectionTitle>
 
         <SkillsGrid>
           <Skill
@@ -36,6 +37,11 @@ export const Skills = () => {
             icon={JsIcon}
             title={"JavaScript"}
             description={"ES6+, работа с данными, события, асинхронность"}
+          />
+          <Skill
+            icon={TypeScriptIcon}
+            title={"TypeScript"}
+            description={"Типизация, интерфейсы, дженерики"}
           />
           <Skill
             icon={ReactIcon}
@@ -57,13 +63,6 @@ export const Skills = () => {
             title={"Figma"}
             description={"Работа с макетами, отступами и UI-деталями"}
           />
-
-          {/*<Skill*/}
-          {/*  icon={TypeScriptIcon}*/}
-          {/*  title={"TypeScript"}*/}
-          {/*  description={"Типизация, интерфейсы, дженерики"}*/}
-          {/*/>*/}
-
           <Skill
             icon={GitHubIcon}
             title={"GitHub"}
@@ -76,17 +75,25 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
+  padding: 64px 0;
   background-color: ${theme.colors.secondaryBg};
 `
 
 const SkillsGrid = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-
   display: grid;
-  grid-template-columns: repeat(4, 200px);
-  justify-content: center;
-  gap: 24px;
+  grid-template-columns: repeat(9, 64px);
+  justify-content: space-between;
+  gap: 18px;
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: repeat(5, 64px);
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 560px) {
+    grid-template-columns: repeat(3, 64px);
+  }
+
 `
 
 
