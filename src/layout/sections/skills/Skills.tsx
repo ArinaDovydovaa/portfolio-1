@@ -64,8 +64,6 @@ export const Skills = () => {
           {/*  description={"Типизация, интерфейсы, дженерики"}*/}
           {/*/>*/}
 
-
-
           <Skill
             icon={GitHubIcon}
             title={"GitHub"}

@@ -36,7 +36,7 @@ const StyledSkill = styled.div`
 
   background-color: ${theme.colors.primaryBg};
   border: 1px solid rgba(37, 37, 37, 0.08);
-  border-radius: 16px;
+  border-radius: 10px;
   box-shadow: 0 14px 35px rgba(37, 37, 37, 0.06);
 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
