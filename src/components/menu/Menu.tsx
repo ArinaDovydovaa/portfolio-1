@@ -28,7 +28,7 @@ const StyledMenu = styled.ul<{ $direction: 'row' | 'column' }>`
 
 const Link = styled.a`
   display: inline-block;
-  color: ${theme.colors.secondaryTitleColor};
+  color: ${theme.colors.LightTextColor};
   font-size: 18px;
   position: relative;
 

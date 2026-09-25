@@ -1,45 +1,62 @@
 import styled from 'styled-components'
 import {SectionTitle} from '@/components/SectionTitle.tsx'
-import {TabMenu} from '@/layout/sections/works/tabMenu/TabMenu.tsx'
-import {FlexWrapper} from '@/components/FlexWrapper.tsx'
 import {Work} from './work/Work'
-import socialImg from '../../../assets/images/social-img.webp'
-import timerImg from '../../../assets/images/timer-img.webp'
 import {Container} from "@/components/Container.tsx";
 import {theme} from "@/styles/Theme.ts";
 
+import socialImg from '../../../assets/images/social-network.webp'
+import storeImg from '../../../assets/images/online-store.webp'
+import blogImg from '../../../assets/images/blog.webp'
+import weatherImg from '../../../assets/images/weather.webp'
+import notesImg from '../../../assets/images/notes.webp'
+import timerImg from '../../../assets/images/timer.webp'
 
-const workItems = ["Все", "Лендинги", "React", "SPA"]
 
 export const Works = () => {
   return (
-
     <StyledWorks id="works">
       <Container>
         <SectionTitle>Проекты</SectionTitle>
-        <TabMenu menuItems={workItems} />
-        <FlexWrapper
-          justify="center"
-          align="flex-start"
-          wrap="wrap"
-          gap="30px"
-        >
+        <SectionText>hhhhh</SectionText>
+
+        <WorksGrid>
           <Work
             title={"Социальная сеть"}
             src={socialImg}
             text={"React-приложение с профилем, диалогами и переиспользуемыми компонентами."}
+            tags={["React", "TypeScript", "Styled Components"]}
+          />
+          <Work
+            title={"Онлайн магазин"}
+            src={storeImg}
+            text={"Интернет-магазин с каталогом товаров, корзиной и оформлением заказа."}
+            tags={["React", "TypeScript", "API"]}
+          />
+          <Work
+            title={"Личный блог"}
+            src={blogImg}
+            text={"Блог с публикацией статей, категориями и системой комментариев."}
+            tags={["React", "Routing", "UI"]}
+          />
+          <Work
+            title={"Погодное приложение"}
+            src={weatherImg}
+            text={"Приложение с поиском городов и прогнозом погоды через открытый API."}
+            tags={["JavaScript", "API", "Fetch"]}
+          />
+          <Work
+            title={"Заметки"}
+            src={notesImg}
+            text={"Приложение для создания, редактирования и хранения заметок с поиском."}
+            tags={["React", "State", "LocalStorage"]}
           />
           <Work
             title={"Таймер"}
             src={timerImg}
-            text={"Интерактивный таймер с настройкой времени и отображением обратного отсчета."}
+            text={"Интерактивный таймер с настройкой времени и отображением обратного отсчёта."}
+            tags={["JavaScript", "Timer", "UI"]}
           />
-          <Work
-            title={"Project Tile goes here"}
-            src={socialImg}
-            text={"his is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"}
-          />
-        </FlexWrapper>
+        </WorksGrid>
       </Container>
     </StyledWorks>
   );
@@ -48,5 +65,19 @@ export const Works = () => {
 const StyledWorks = styled.section`
   background-color: ${theme.colors.secondaryBg};
 
+`
+
+const SectionText = styled.h2`
+  max-width: 560px;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+`
+
+const WorksGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
 `
 
