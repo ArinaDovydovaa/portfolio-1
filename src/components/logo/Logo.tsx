@@ -18,8 +18,8 @@ const LogoLink = styled.a`
 `
 
 const LogoImg = styled.img`
-  width: 250px;
-  height: 100%;
+  width: auto;
+  height: 40px;
+  display: block;
   object-fit: contain;
-  border-radius: 30%;
 `

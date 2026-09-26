@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {SectionTitle} from '@/components/SectionTitle';
-import {Skill} from './skill/Skill'
+import {Skill} from '@/layout/sections/about/skill/Skill'
 import {Container} from "@/components/Container";
 
 import HtmlIcon from '../../../assets/icons/html.svg?react';

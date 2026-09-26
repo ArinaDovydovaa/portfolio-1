@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react';
 import styled, {css} from 'styled-components';
 import {Logo} from "../../components/logo/Logo";
-import {Container} from "@/components/Container";
 import {FlexWrapper} from "@/components/FlexWrapper";
 import {Menu} from "@/components/menu/Menu";
 
@@ -24,7 +23,7 @@ export const Header = () => {
   return (
     // Передаём пропс $isScrolled в styled-компонент.
     <StyledHeader $isScrolled={isScrolled}>
-      <Container>
+      <HeaderContainer>
         <FlexWrapper
           justify={"space-between"}
           align={"center"}
@@ -32,14 +31,13 @@ export const Header = () => {
           <Logo />
           <Menu />
         </FlexWrapper>
-      </Container>
+      </HeaderContainer>
     </StyledHeader>
   );
 };
 
 // Тип пропса указываем в generic, чтобы TS знал про $isScrolled
 const StyledHeader = styled.header<{ $isScrolled: boolean }>`
-  padding: 15px 0;
   position: fixed;
   left: 0;
   right: 0;
@@ -71,3 +69,9 @@ const StyledHeader = styled.header<{ $isScrolled: boolean }>`
       `}
 `;
 
+const HeaderContainer = styled.div`
+  max-width: 1760px;
+  width: 100%;
+  padding: 40px 0;
+  margin: 0 auto;
+`

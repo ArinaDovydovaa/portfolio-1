@@ -28,8 +28,10 @@ const StyledMenu = styled.ul<{ $direction: 'row' | 'column' }>`
 
 const Link = styled.a`
   display: inline-block;
-  color: ${theme.colors.textMuted};
-  font-size: 18px;
+  color: ${theme.colors.lightTitleColor};
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.02em;
   position: relative;
 
   &::after {

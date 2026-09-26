@@ -9,9 +9,8 @@ export const Main = () => {
     <StyledMain id="home">
       <Container>
         <MainContent>
-          <MainIntro>Привет, я <Accent>Арина</Accent></MainIntro>
-          <MainTitle>Frontend-разработчик</MainTitle>
-          <MainSubtitle>Создаю адаптивные и аккуратные интерфейсы на React, TypeScript и styled-components.</MainSubtitle>
+          <MainIntro>Привет, я Арина </MainIntro>
+          <MainTitle>Frontend- <MainSpan>разработчик</MainSpan></MainTitle>
           <ButtonAccent>связаться</ButtonAccent>
         </MainContent>
       </Container>
@@ -19,7 +18,7 @@ export const Main = () => {
   );
 };
 const StyledMain = styled.section`
-  min-height: 720px;
+  min-height: 965px;
   padding: 0;
   background-image: url(${photo});
   background-size: cover;
@@ -28,34 +27,33 @@ const StyledMain = styled.section`
   align-items: center;
 `
 const MainContent = styled.div`
-  max-width: 560px;
-  margin-left: 80px;
+  max-width: 600px;
 
 `
 const MainIntro = styled.h2`
-  margin-bottom: 12px;
   color: ${theme.colors.lightTitleColor};
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 1.12682;
+  letter-spacing: 0.02em;
 `
-const Accent = styled.span`
+
+const MainTitle = styled.h1`
   color: ${theme.colors.accentColor};
   font-weight: 700;
-  font-size: 35px;
+  font-size: 70px;
+  line-height: 1.12682;
+  letter-spacing: 0.02em;
+  margin-bottom: 70px;
 `
-const MainTitle = styled.h1`
+
+const MainSpan = styled.span`
   color: ${theme.colors.lightTitleColor};
-  font-size: 68px;
-  line-height: 0.98;
-`
-const MainSubtitle = styled.p`
-  max-width: 460px;
-  margin: 24px 0 32px;
-  color: ${theme.colors.lightTextColor};
-  opacity: 0.75;
-  font-size: 18px;
-  line-height: 1.7;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 1.12682;
+  letter-spacing: 0.02em;
+
 `
 
 
