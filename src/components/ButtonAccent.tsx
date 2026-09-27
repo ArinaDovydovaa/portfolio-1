@@ -2,14 +2,13 @@ import styled from 'styled-components'
 import {theme} from "@/styles/Theme.ts";
 
 export const ButtonAccent = styled.button`
-  min-width: 198px;
-  min-height: 60px;
-  padding: 20px 0;
+  //min-width: 198px;
+  //min-height: 60px;
+  padding: 20px 50px;
 
   background: transparent;
   border: 1px solid ${theme.colors.accentColor};
   border-radius: 34px;
-  //transition: all 0.3s ease;
 
   color: ${theme.colors.lightTextColor};
   font-size: 16px;

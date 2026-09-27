@@ -22,8 +22,8 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
       ? theme.colors.lightTitleColor
       : theme.colors.darkTitleColor};
 
-  font-size: 32px;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 60px;
   margin: ${({align}) => align === 'left' ? '0 0 36px' : '0 auto 36px'};
 
 
@@ -31,12 +31,14 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
     content: "";
     width: ${({align}) => align === 'left' ? '420px' : '360px'};
     max-width: calc(100vw - 40px);
-    height: 1px;
+    height: 2px;
+
+    margin-left: -20px;
 
     background: linear-gradient(
       90deg,
-      ${theme.colors.accentColor} 0%,
-      ${theme.colors.accentSoft} 55%,
+      ${theme.colors.accentColor} 10%,
+      ${theme.colors.accentSoft} 80%,
       transparent 100%
     );
   }

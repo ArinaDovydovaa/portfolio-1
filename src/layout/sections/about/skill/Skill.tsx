@@ -32,8 +32,8 @@ const Tooltip = styled.div`
   bottom: calc(100% + 14px);
   z-index: 10;
 
-  width: 230px;
-  padding: 14px 16px;
+  width: 300px;
+  padding: 20px;
 
   background-color: ${theme.colors.primaryBg};
   border-radius: 14px;
@@ -61,12 +61,12 @@ const Tooltip = styled.div`
 
 const StyledSkill = styled.div`
   position: relative;
-  width: 66px;
-  height: 66px;
+  width: 110px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${theme.colors.secondaryBg};
+  background-color: ${theme.colors.primaryBg};
   border: 1px solid ${theme.colors.border};
   border-radius: 18px;
   cursor: pointer;
@@ -74,8 +74,8 @@ const StyledSkill = styled.div`
   transition: border-color 0.3s ease, background-color 0.3s ease;
 
   &:hover {
-    background-color: ${theme.colors.primaryBg};
-    border-color: ${theme.colors.tertiaryBg};
+    background-color: ${theme.colors.accentSofter};
+    border-color: ${theme.colors.border};
   }
 
   &:hover ${Tooltip} {
@@ -88,8 +88,8 @@ const StyledSkill = styled.div`
 
 
 const IconWrapper = styled.div`
-  width: 36px;
-  height: 36px;
+  width: 60px;
+  height: 60px;
 
   svg {
     width: 100%;
@@ -99,12 +99,14 @@ const IconWrapper = styled.div`
 `
 
 const SkillTitle = styled.h3`
+  font-size: 20px;
   text-align: left;
   color: ${theme.colors.darkTitleColor};
   opacity: 0.75;
 `
 const SkillText = styled.p`
   text-align: left;
+  font-size: 16px;
 `
 
 

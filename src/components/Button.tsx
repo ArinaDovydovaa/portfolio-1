@@ -3,14 +3,14 @@ import {theme} from "@/styles/Theme.ts";
 
 
 export const Button = styled.button`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 12px 24px;
+  border: 1px solid rgba(0, 0, 0, 0.22);
+  width: 186px;
+  height: 56px;
+  
+  padding: 20px 40px;
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: ${theme.colors.textPrimary};
 
