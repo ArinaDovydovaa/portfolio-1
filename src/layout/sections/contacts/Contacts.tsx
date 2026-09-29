@@ -70,63 +70,60 @@ export const Contacts = () => {
 
 
 const StyledContacts = styled.section`
-  padding: 80px 0;
+  padding: 150px 0;
   background-color: ${theme.colors.darkBg};
 `
 
 const StyledContent = styled.div`
   display: grid;
-  grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
-  gap: 48px;
-  margin-top: 40px;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  margin-top: 60px;
+  align-items: start;
 `
 const StyledInfo = styled.div`
-  max-width: 500px;
-  width: 100%;
+  max-width: 480px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 24px;
+  gap: 32px;
 
   p {
-    font-weight: 600;
-    font-size: 20px;
-    letter-spacing: 0.01em;
-    text-align: start;
+    font-weight: 400;
+    font-size: 18px;
     line-height: 1.6;
     margin: 0;
-
   }
 `
 const StyledForm = styled.form`
-  max-width: 540px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: end;
-  gap: 16px;
-  margin: 0 auto;
+  gap: 32px;
 
   textarea {
     resize: none;
     height: 150px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
 `
 const Field = styled.input`
   width: 100%;
-  background-color: ${theme.colors.tertiaryBg};
-  border: 1px solid ${theme.colors.textMuted};
-  padding: 7px 15px;
-  border-radius: 10px;
-  font-weight: 400;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid ${theme.colors.textMuted || '#444'};
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+  padding: 12px 0;
   font-size: 16px;
-  letter-spacing: 0.05em;
-  color: ${theme.colors.darkTitleColor};
+  font-family: inherit;
+  color: ${theme.colors.lightTitleColor || '#fff'};
+  transition: border-color 0.3s ease;
 
 
   &::placeholder {
     color: ${theme.colors.textPrimary};
     text-transform: capitalize;
+    padding-left: 10px;
   }
 
   &:focus-visible {

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import {Logo} from "@/components/logo/Logo";
-import {Menu} from "@/components/menu/Menu";
+// import {Menu} from "@/layout/header/headerMenu/HeaderMenu.tsx";
 import {theme} from "@/styles/Theme";
 import {Container} from "@/components/Container";
 
@@ -13,7 +13,7 @@ export const Footer = () => {
           <Logo />
           <Copyright>© {new Date().getFullYear()} Арина Довыдова. Все права защищены.</Copyright>
           <MenuCell>
-            <Menu />
+            {/*<Menu />*/}
           </MenuCell>
         </FooterContent>
       </Container>
@@ -23,7 +23,7 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
   background-color: ${theme.colors.darkBg};
-  padding: 20px 0;
+  padding: 40px 0;
 `
 
 const FooterContent = styled.div`

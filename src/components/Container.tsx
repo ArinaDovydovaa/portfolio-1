@@ -1,17 +1,24 @@
 import styled from "styled-components";
+import {theme} from "@/styles/Theme.ts";
 
 export const Container = styled.div`
   max-width: 1440px;
-  width: 100%;
   padding: 0 80px;
   margin: 0 auto;
 
 
-  @media screen and (max-width: 768px) {
-    padding: 0 24px;
+  @media ${theme.media.desktop} {
+    max-width: 1200px;
+    padding: 0 40px;
   }
 
-  @media screen and (max-width: 480px) {
-    padding: 0 16px;
+  @media ${theme.media.tablet} {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  @media ${theme.media.mobile} {
+    width: 100%;
+    padding: 0 20px;
   }
 `

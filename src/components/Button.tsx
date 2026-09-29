@@ -6,7 +6,7 @@ export const Button = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.22);
   width: 186px;
   height: 56px;
-  
+
   padding: 20px 40px;
   font-size: 16px;
   font-weight: 600;
@@ -25,8 +25,8 @@ export const Button = styled.button`
 
   &:hover {
     transform: translateY(-3px);
-    border-color: ${theme.colors.borderHover}
-    box-shadow: ${theme.colors.shadowSm}
+    border-color: ${theme.colors.borderHover};
+    box-shadow: ${theme.colors.shadowSm};
   }
 
   &:active {

@@ -40,9 +40,8 @@ export const GlobalStyle = createGlobalStyle`
   p {
     margin: 0;
     font-family: "Open Sans", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.85182;
     letter-spacing: 0.01em;
     color: ${theme.colors.textSecondary};
   }

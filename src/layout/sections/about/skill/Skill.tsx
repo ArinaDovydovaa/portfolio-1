@@ -61,8 +61,8 @@ const Tooltip = styled.div`
 
 const StyledSkill = styled.div`
   position: relative;
-  width: 110px;
-  height: 110px;
+  width: 75px;
+  height: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,8 +88,8 @@ const StyledSkill = styled.div`
 
 
 const IconWrapper = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
 
   svg {
     width: 100%;

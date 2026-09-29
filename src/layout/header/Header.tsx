@@ -1,77 +1,57 @@
-import {useEffect, useState} from 'react';
-import styled, {css} from 'styled-components';
+import styled from 'styled-components';
 import {Logo} from "../../components/logo/Logo";
-import {FlexWrapper} from "@/components/FlexWrapper";
-import {Menu} from "@/components/menu/Menu";
+import {HeaderMenu} from "@/layout/header/headerMenu/HeaderMenu";
+import {theme} from "@/styles/Theme.ts";
+import {MobileMenu} from "@/layout/header/mobileMenu/MobileMenu.tsx";
+
+const items = ["Главная", "Обо мне", "Проекты", "Контакты"]
 
 
 export const Header = () => {
-  // Флаг: проскроллена ли страница достаточно, чтобы уплотнить хедер
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    // Обработчик скролла. Если больше 50px - "плотный" вид
-    const onScroll = () => setIsScrolled(window.scrollY > 50);
-
-    // Подписываемся на событие скролла при монтировании
-    window.addEventListener('scroll', onScroll);
-    // Отписываемся при размонтировании — иначе будет утечка памяти
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);// [] — эффект выполнится один раз при монтировании
-
-
   return (
-    // Передаём пропс $isScrolled в styled-компонент.
-    <StyledHeader $isScrolled={isScrolled}>
+    <StyledHeader>
       <HeaderContainer>
-        <FlexWrapper
-          justify={"space-between"}
-          align={"center"}
-        >
+        <HeaderInner>
           <Logo />
-          <Menu />
-        </FlexWrapper>
+          <HeaderMenu menuItems={items} />
+          <MobileMenu menuItems={items} />
+        </HeaderInner>
       </HeaderContainer>
     </StyledHeader>
   );
 };
 
-// Тип пропса указываем в generic, чтобы TS знал про $isScrolled
-const StyledHeader = styled.header<{ $isScrolled: boolean }>`
+const StyledHeader = styled.header`
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
-  z-index: 9999;
+  z-index: 1000;
 
-  //Плавные переходы
-  transition: background-color 0.3s ease,
-  backdrop-filter 0.3s ease,
-  box-shadow 0.3s ease;
-
-  //  Условные стили:
-  //  - если isScrolled=true  → полупрозрачный фон + blur (glassmorphism)
-  //- если isScrolled=false → полностью прозрачный, виден фон Main
-  ${({$isScrolled}) =>
-    $isScrolled
-      ? css`
-        background-color: rgba(30, 30, 30, 0.6);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        //тень снизу
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      `
-
-      /* Сверху страницы хедер полностью прозрачный —
-                   виден фон hero-секции (Main) */
-      : css`
-        background-color: transparent;
-      `}
+  background-color: rgba(30, 30, 30, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 `;
 
 const HeaderContainer = styled.div`
   max-width: 1760px;
   width: 100%;
-  padding: 40px 0;
   margin: 0 auto;
+  padding: 20px 40px;
+
+
+  @media ${theme.media.desktop} {
+    padding: 18px 30px;
+  }
+  @media ${theme.media.tablet} {
+    padding: 14px 20px;
+  }
+  @media ${theme.media.mobile} {
+    padding: 10px 15px;
+  }
 `
+const HeaderInner = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;`

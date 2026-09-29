@@ -63,6 +63,7 @@ export const Works = () => {
 
 const StyledWorks = styled.section`
   background-color: ${theme.colors.primaryBg};
+  padding: 150px 0;
 
 `
 
