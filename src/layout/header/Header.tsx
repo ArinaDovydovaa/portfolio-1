@@ -45,13 +45,19 @@ const HeaderContainer = styled.div`
     padding: 18px 30px;
   }
   @media ${theme.media.tablet} {
-    padding: 14px 20px;
+    padding: 0 20px;
   }
   @media ${theme.media.mobile} {
-    padding: 10px 15px;
+    padding: 0 15px;
   }
 `
 const HeaderInner = styled.div`
+  height: 50px;
+
   display: flex;
   justify-content: space-between;
-  align-items: center;`
+  align-items: center;
+
+  @media ${theme.media.mobile} {
+    height: 45px;
+  }`
