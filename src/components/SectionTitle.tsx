@@ -41,4 +41,34 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
     );
   }
 
+
+  @media ${theme.media.desktop} {
+    font-size: 52px;
+    margin: ${({align}) => align === 'left' ? '0 0 44px' : '0 auto 44px'};
+
+    &::after {
+      width: ${({align}) => align === 'left' ? '380px' : '320px'};
+    }
+  }
+
+  @media ${theme.media.tablet} {
+    font-size: 42px;
+    gap: 12px;
+    margin: ${({align}) => align === 'left' ? '0 0 36px' : '0 auto 36px'};
+
+    &::after {
+      width: ${({align}) => align === 'left' ? '300px' : '260px'};
+    }
+  }
+
+  @media ${theme.media.mobile} {
+    font-size: 34px;
+    gap: 10px;
+    margin: ${({align}) => align === 'left' ? '0 0 30px' : '0 auto 30px'};
+
+    &::after {
+      width: ${({align}) => align === 'left' ? '220px' : '200px'};
+    }
+  }
+
 `

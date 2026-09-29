@@ -57,6 +57,15 @@ const Tooltip = styled.div`
     border-color: ${theme.colors.primaryBg} transparent transparent transparent;
   }
 
+  @media ${theme.media.tablet} {
+    width: 260px;
+    padding: 16px;
+  }
+  @media ${theme.media.mobile} {
+    width: 220px;
+    padding: 14px;
+  }
+
 `;
 
 const StyledSkill = styled.div`
@@ -84,6 +93,17 @@ const StyledSkill = styled.div`
     transform: translate(-50%, 0);
   }
 
+  @media ${theme.media.desktop} {
+    width: 68px;
+    height: 68px;
+    border-radius: 16px;
+  }
+
+  @media ${theme.media.mobile} {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+  }
 `;
 
 
@@ -96,6 +116,16 @@ const IconWrapper = styled.div`
     height: 100%;
     display: block;
   }
+
+  @media ${theme.media.desktop} {
+    width: 42px;
+    height: 42px;
+  }
+
+  @media ${theme.media.mobile} {
+    width: 34px;
+    height: 34px;
+  }
 `
 
 const SkillTitle = styled.h3`
@@ -103,10 +133,25 @@ const SkillTitle = styled.h3`
   text-align: left;
   color: ${theme.colors.darkTitleColor};
   opacity: 0.75;
+
+  @media ${theme.media.tablet} {
+    font-size: 18px;
+  }
+  @media ${theme.media.mobile} {
+    font-size: 16px;
+  }
+
 `
 const SkillText = styled.p`
   text-align: left;
   font-size: 16px;
+
+  @media ${theme.media.tablet} {
+    font-size: 14px;
+  }
+  @media ${theme.media.mobile} {
+    font-size: 13px;
+  }
 `
 
 
