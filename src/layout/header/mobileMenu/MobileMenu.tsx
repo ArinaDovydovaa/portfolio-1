@@ -61,7 +61,7 @@ const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
 `
 const BurgerButton = styled.button<{ $isOpen: boolean }>`
   position: fixed;
-  top: 5px;
+  bottom: 2px;
   right: 20px;
   z-index: 10000;
 
@@ -77,7 +77,8 @@ const BurgerButton = styled.button<{ $isOpen: boolean }>`
   cursor: pointer;
 
   @media ${theme.media.mobile} {
-    top: 1px;
+    width: 40px;
+    height: 40px;
   }
 
   span {

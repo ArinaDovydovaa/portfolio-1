@@ -9,8 +9,8 @@ export const ButtonAccent = styled.button`
   padding: 16px 40px;
 
   background: transparent;
-  border: 1px solid ${theme.colors.accentColor};
-  //border-radius: 34px;
+  border: 1px solid ${theme.colors.accentSoft};
+  border-radius: 34px;
 
   color: ${theme.colors.lightTextColor};
   font-size: 16px;
@@ -28,6 +28,27 @@ export const ButtonAccent = styled.button`
   &:active {
     transform: scale(1.05);
     box-shadow: 0 0 20px 1px ${theme.colors.accentColor};
+  }
+
+
+  @media ${theme.media.desktop} {
+    min-width: 150px;
+    height: 48px;
+    padding: 12px 28px;
+    font-size: 12px;
+  }
+  @media ${theme.media.tablet} {
+    min-width: 130px;
+    height: 42px;
+    padding: 10px 22px;
+    font-size: 11px;
+  }
+
+  @media ${theme.media.mobile} {
+    min-width: 112px;
+    height: 38px;
+    padding: 9px 18px;
+    font-size: 10px;
   }
 `
 

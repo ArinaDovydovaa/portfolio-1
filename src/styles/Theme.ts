@@ -7,7 +7,7 @@ export const theme = {
 
     accentColor: "#FBA820",
     accentHover: "#F09200",
-    accentSoft: "rgba(251, 168, 32, 0.12)",
+    accentSoft: "rgba(251, 168, 32, 0.3)",
     accentSofter: "rgba(251, 168, 32, 0.06)",// для hover
 
     darkTitleColor: "#3F3F3F",

@@ -10,7 +10,8 @@ export const Main = () => {
       <Container>
         <MainContent>
           <MainIntro>Привет, я Арина </MainIntro>
-          <MainTitle> Frontend- <MainSpan>разработчик</MainSpan></MainTitle>
+          <MainTitle> Frontend </MainTitle>
+          <MainTitleLine>разработчик</MainTitleLine>
           <ButtonAccent>связаться</ButtonAccent>
         </MainContent>
       </Container>
@@ -28,48 +29,117 @@ const StyledMain = styled.section`
   display: flex;
   align-items: center;
 
-    // @media ${theme.media.tablet} {
-  //   background-size: contain;
-    //   background-color: ${theme.colors.darkBg};
-  // }
-
-  @media screen and (max-width: 640px) {
-    aspect-ratio: 576 / 600;
-    background-position: center;
+  & > ${Container} {
+    max-width: none;
+    margin: 0;
+    padding-bottom: 10%;
+    padding-left: 20%;
   }
 
-`
-const MainContent = styled.div`
-  max-width: 600px;
 
+  @media ${theme.media.tablet} {
+    aspect-ratio: 768 / 520;
+    background-position: 55% center;
+
+    & > ${Container} {
+      padding-left: 15%;
+      padding-bottom: 60px;
+
+    }
+  }
+
+  @media ${theme.media.mobile} {
+    aspect-ratio: 576 / 450;
+    background-position: 65% center;
+
+    & > ${Container} {
+      padding-left: 70px;
+      padding-bottom: 80px;
+    }
+  }
+`;
+
+
+const MainContent = styled.div`
+  max-width: 620px;
+
+  @media ${theme.media.desktop} {
+    max-width: 500px;
+  }
+
+  @media ${theme.media.tablet} {
+    max-width: 300px;
+  }
+
+  @media ${theme.media.mobile} {
+    max-width: 250px;
+  }
 `
+
 const MainIntro = styled.span`
+  display: block;
+
   color: ${theme.colors.lightTitleColor};
-  font-weight: 700;
-  font-size: 65px;
-  line-height: 1.12682;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 1.2;
+
+  @media ${theme.media.desktop} {
+    font-size: 45px;
+  }
+
+  @media ${theme.media.tablet} {
+    font-size: 28px;
+  }
+
+  @media ${theme.media.mobile} {
+    font-size: 22px;
+  }
 `
 
 const MainTitle = styled.h1`
+  //margin: 0 0 50px;
+
   color: ${theme.colors.accentColor};
   font-weight: 700;
-  font-size: 70px;
-  line-height: 1.12682;
-  letter-spacing: 0.02em;
-  margin-bottom: 70px;
+  font-size: 110px;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+
+  @media ${theme.media.desktop} {
+    font-size: 80px;
+  }
+
+  @media ${theme.media.tablet} {
+    font-size: 50px;
+  }
+
+  @media ${theme.media.mobile} {
+    font-size: 40px;
+  }
 `
 
-const MainSpan = styled.span`
+const MainTitleLine = styled.span`
+  display: block;
+  margin-bottom: 50px;
+
   color: ${theme.colors.lightTitleColor};
-  font-weight: 650;
-  font-size: 70px;
-  line-height: 1.12682;
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-size: 75px;
+  line-height: 1.2;
 
+  @media ${theme.media.desktop} {
+    font-size: 55px;
+    margin-bottom: 42px;
+  }
+
+  @media ${theme.media.tablet} {
+    font-size: 34px;
+    margin-bottom: 32px;
+  }
+
+  @media ${theme.media.mobile} {
+    font-size: 28px;
+    margin-bottom: 28px;
+  }
 `
-
-
-
-
-
