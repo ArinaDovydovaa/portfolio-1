@@ -35,13 +35,13 @@ export const ButtonAccent = styled.button`
     min-width: 150px;
     height: 48px;
     padding: 12px 28px;
-    font-size: 12px;
+    font-size: 14px;
   }
   @media ${theme.media.tablet} {
-    min-width: 130px;
+    min-width: 125px;
     height: 42px;
     padding: 10px 22px;
-    font-size: 11px;
+    font-size: 10px;
   }
 
   @media ${theme.media.mobile} {

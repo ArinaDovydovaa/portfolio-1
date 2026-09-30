@@ -122,7 +122,7 @@ const AboutCards = styled.div`
   margin-bottom: 56px;
 
   @media ${theme.media.desktop} {
-    gap: 32px;
+    gap: 70px;
     margin-bottom: 48px;
   }
   @media ${theme.media.tablet} {
@@ -142,34 +142,35 @@ const AboutItem = styled.div`
 const AboutItemTitle = styled.h3`
   margin-bottom: 14px;
   color: ${theme.colors.darkTitleColor};
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   text-align: left;
 
   @media ${theme.media.desktop} {
-    font-size: 22px;
+    font-size: 28px;
   }
   @media ${theme.media.tablet} {
     font-size: 22px;
     margin-bottom: 10px;
   }
   @media ${theme.media.mobile} {
-    font-size: 20px;
+    font-size: 18px;
   }
 
 `;
 
 const AboutText = styled.p`
-  max-width: 340px;
-  font-size: 16px;
+  max-width: 350px;
+  font-size: 18px;
   line-height: 1.75;
 
   @media ${theme.media.tablet} {
-    max-width: 620px;
+    font-size: 14px;
+    max-width: 520px;
   }
   @media ${theme.media.mobile} {
-    max-width: 100%;
-    font-size: 14px;
+    max-width: 80%;
+    font-size: 12px;
     line-height: 1.65;
   }
 `;
@@ -185,15 +186,13 @@ const SkillsGrid = styled.div`
     grid-template-columns: repeat(9, 68px);
     gap: 18px;
   }
-
   @media ${theme.media.tablet} {
-    grid-template-columns: repeat(5, 68px);
+    grid-template-columns: repeat(9, 58px);
     justify-content: center;
-    gap: 18px;
+    gap: 20px;
   }
-
   @media ${theme.media.mobile} {
-    grid-template-columns: repeat(3, 60px);
+    grid-template-columns: repeat(9, 42px);
     gap: 16px;
   }
 `;

@@ -29,10 +29,10 @@ export const Skill = (props: SkillPropsType) => {
 const Tooltip = styled.div`
   position: absolute;
   left: 50%;
-  bottom: calc(100% + 14px);
+  top: calc(100% + 14px);
   z-index: 10;
 
-  width: 300px;
+  width: 150px;
   padding: 20px;
 
   background-color: ${theme.colors.primaryBg};
@@ -41,7 +41,7 @@ const Tooltip = styled.div`
 
   opacity: 0;
   visibility: hidden;
-  transform: translate(-50%, 8px);
+  transform: translate(-50%, -8px);
 
   transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 
@@ -49,21 +49,25 @@ const Tooltip = styled.div`
     content: "";
     position: absolute;
     left: 50%;
-    top: 100%;
+    bottom: 100%;
+    top: auto;
     transform: translateX(-50%);
 
-    border-width: 7px 7px 0 7px;
+    width: 0;
+    height: 0;
+
+    border-width: 0 7px 7px 7px;
     border-style: solid;
-    border-color: ${theme.colors.primaryBg} transparent transparent transparent;
+    border-color: transparent transparent ${theme.colors.tertiaryBg} transparent;
   }
 
   @media ${theme.media.tablet} {
-    width: 260px;
-    padding: 16px;
+    width: 120px;
+    padding: 12px;
   }
   @media ${theme.media.mobile} {
-    width: 220px;
-    padding: 14px;
+    width: 90px;
+    padding: 10px;
   }
 
 `;
@@ -98,10 +102,14 @@ const StyledSkill = styled.div`
     height: 68px;
     border-radius: 16px;
   }
-
+  @media ${theme.media.tablet} {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+  }
   @media ${theme.media.mobile} {
-    width: 60px;
-    height: 60px;
+    width: 42px;
+    height: 42px;
     border-radius: 14px;
   }
 `;
@@ -121,10 +129,14 @@ const IconWrapper = styled.div`
     width: 42px;
     height: 42px;
   }
+  @media ${theme.media.tablet} {
+    width: 38px;
+    height: 38px;
+  }
 
   @media ${theme.media.mobile} {
-    width: 34px;
-    height: 34px;
+    width: 26px;
+    height: 26px;
   }
 `
 
@@ -135,10 +147,10 @@ const SkillTitle = styled.h3`
   opacity: 0.75;
 
   @media ${theme.media.tablet} {
-    font-size: 18px;
+    font-size: 16px;
   }
   @media ${theme.media.mobile} {
-    font-size: 16px;
+    font-size: 12px;
   }
 
 `
@@ -147,10 +159,10 @@ const SkillText = styled.p`
   font-size: 16px;
 
   @media ${theme.media.tablet} {
-    font-size: 14px;
+    font-size: 12px;
   }
   @media ${theme.media.mobile} {
-    font-size: 13px;
+    font-size: 10px;
   }
 `
 

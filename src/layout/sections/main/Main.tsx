@@ -32,31 +32,34 @@ const StyledMain = styled.section`
   & > ${Container} {
     max-width: none;
     margin: 0;
-    padding-bottom: 10%;
-    padding-left: 20%;
+    padding-bottom: 50px;
+    padding-left: 350px;
   }
 
-
-  @media ${theme.media.tablet} {
-    aspect-ratio: 768 / 520;
-    background-position: 55% center;
-
+  @media ${theme.media.desktop} {
     & > ${Container} {
-      padding-left: 15%;
-      padding-bottom: 60px;
-
+      padding-bottom: 50px;
+      padding-left: 300px;
     }
-  }
 
-  @media ${theme.media.mobile} {
-    aspect-ratio: 576 / 450;
-    background-position: 65% center;
+    @media ${theme.media.tablet} {
+      aspect-ratio: 768 / 520;
+      background-position: 55% center;
 
-    & > ${Container} {
-      padding-left: 70px;
-      padding-bottom: 80px;
+      & > ${Container} {
+        padding-left: 120px;
+        padding-bottom: 55px;
+      }
     }
-  }
+    @media ${theme.media.mobile} {
+      aspect-ratio: 576 / 450;
+      background-position: 65% center;
+
+      & > ${Container} {
+        padding-left: 70px;
+        padding-bottom: 80px;
+      }
+    }
 `;
 
 

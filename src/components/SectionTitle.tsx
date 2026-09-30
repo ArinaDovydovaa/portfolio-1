@@ -31,7 +31,7 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
     max-width: calc(100vw - 32px);
     height: 2px;
 
-    margin-left: -20px;
+    margin-left: -15px;
 
     background: linear-gradient(
       90deg,
@@ -52,7 +52,7 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
   }
 
   @media ${theme.media.tablet} {
-    font-size: 42px;
+    font-size: 38px;
     gap: 12px;
     margin: ${({align}) => align === 'left' ? '0 0 36px' : '0 auto 36px'};
 
@@ -62,12 +62,14 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
   }
 
   @media ${theme.media.mobile} {
-    font-size: 34px;
+    font-size: 32px;
     gap: 10px;
     margin: ${({align}) => align === 'left' ? '0 0 30px' : '0 auto 30px'};
 
     &::after {
       width: ${({align}) => align === 'left' ? '220px' : '200px'};
+      margin-left: -5px;
+      margin-top: -5px;
     }
   }
 
