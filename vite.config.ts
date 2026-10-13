@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react";
 import svgr from "vite-plugin-svgr";
 
@@ -15,5 +15,12 @@ export default defineConfig({
     alias: {
       "@": "/src",
     },
-  }
+  },
+  css: {
+    modules: {
+      localsConvention: 'dashesOnly', // или 'camelCaseOnly', 'dashes', 'camelCase'
+      generateScopedName: '[name]__[local]___[hash:base64:5]', // формат: ComponentName_className_hash
+    },
+  },
 });
+

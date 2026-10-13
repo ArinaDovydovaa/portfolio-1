@@ -38,18 +38,16 @@ export const Contacts = () => {
     <StyledContacts id="contact">
       <Container>
         <SectionTitle
-          align="left"
+          align="center"
           variant="light"
         >
-          Давай'те работать вместе
+          Давайте работать вместе
         </SectionTitle>
 
         <StyledContent>
           <StyledInfo>
-            <p>Я открыта к новым проектам)
-              Если вам нужен аккуратный интерфейс с вниманием к деталям — напишите мне.
-            </p>
-            <SocialList items={socialItems} />
+            Я открыта к новым проектам)
+            Если вам нужен аккуратный интерфейс с вниманием к деталям — напишите мне.
           </StyledInfo>
 
           <StyledForm>
@@ -62,6 +60,7 @@ export const Contacts = () => {
             <ButtonAccent type="submit">Отправить</ButtonAccent>
           </StyledForm>
 
+          <SocialList items={socialItems} />
         </StyledContent>
       </Container>
     </StyledContacts>
@@ -75,34 +74,38 @@ const StyledContacts = styled.section`
 `
 
 const StyledContent = styled.div`
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 80px;
-  margin-top: 60px;
-  align-items: start;
-`
-const StyledInfo = styled.div`
-  max-width: 480px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  align-items: center;
+  gap: 30px;
+`
+const StyledInfo = styled.p`
+  text-align: center;
+  font-size: 20px;
+  max-width: 50%;
 
-  p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 0;
+
+  @media ${theme.media.desktop} {
+    max-width: 60%;
   }
+  @media ${theme.media.tablet} {
+    max-width: 70%;
+  }
+
+  @media ${theme.media.mobile} {
+    max-width: 70%;
+  }
+
 `
 const StyledForm = styled.form`
-  width: 100%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   gap: 32px;
 
   textarea {
     resize: none;
-    height: 150px;
+    min-height: 150px;
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
   }
 `
@@ -129,4 +132,19 @@ const Field = styled.input`
   &:focus-visible {
     outline: 1px solid ${theme.colors.textPrimary};
   }
+
+
+  @media ${theme.media.desktop} {
+  }
+
+  @media ${theme.media.tablet} {
+  }
+
+  @media ${theme.media.mobile} {
+  }
+
+
+
+
+
 `

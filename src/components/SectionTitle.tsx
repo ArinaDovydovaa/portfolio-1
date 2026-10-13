@@ -4,6 +4,7 @@ import {theme} from "@/styles/Theme.ts";
 type SectionTitlePropsType = {
   align?: 'center' | 'left';
   variant?: 'dark' | 'light';
+  lineWidth?: string;
 };
 
 export const SectionTitle = styled.h2<SectionTitlePropsType>`
@@ -14,7 +15,7 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
   align-items: ${({align}) => align === 'left' ? 'flex-start' : 'center'};
   gap: 14px;
 
-  margin: ${({align}) => align === 'left' ? '0 0 48px' : '0 auto 48px'};
+  margin: ${({align}) => align === 'left' ? '0 0 48px' : '0 auto 20px'};
 
   color: ${({variant}) =>
     variant === 'light'
@@ -27,11 +28,12 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
 
   &::after {
     content: "";
-    width: ${({align}) => align === 'left' ? '420px' : '360px'};
+    width: ${({lineWidth, align}) =>
+      lineWidth || (align === 'left' ? '420px' : '750px')};
     max-width: calc(100vw - 32px);
     height: 2px;
 
-    margin-left: -15px;
+    margin-left: ${({align}) => align === 'left' ? '-15px' : '20px'};
 
     background: linear-gradient(
       90deg,
@@ -44,20 +46,20 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
 
   @media ${theme.media.desktop} {
     font-size: 52px;
-    margin: ${({align}) => align === 'left' ? '0 0 44px' : '0 auto 44px'};
+    margin: ${({align}) => align === 'left' ? '0 0 44px' : '0 auto 36px'};
 
     &::after {
-      width: ${({align}) => align === 'left' ? '380px' : '320px'};
+      width: ${({align}) => align === 'left' ? '320px' : '650px'};
     }
   }
 
   @media ${theme.media.tablet} {
     font-size: 38px;
     gap: 12px;
-    margin: ${({align}) => align === 'left' ? '0 0 36px' : '0 auto 36px'};
+    margin: ${({align}) => align === 'left' ? '0 0 36px' : '0 auto 30px'};
 
     &::after {
-      width: ${({align}) => align === 'left' ? '300px' : '260px'};
+      width: ${({align}) => align === 'left' ? '200px' : '500px'};
     }
   }
 
@@ -67,7 +69,7 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
     margin: ${({align}) => align === 'left' ? '0 0 30px' : '0 auto 30px'};
 
     &::after {
-      width: ${({align}) => align === 'left' ? '220px' : '200px'};
+      width: ${({align}) => align === 'left' ? '180px' : '400px'};
       margin-left: -5px;
       margin-top: -5px;
     }

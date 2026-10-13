@@ -119,11 +119,14 @@ const AboutCards = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px;
-  margin-bottom: 56px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+  width: 100%;
+  margin-inline: auto;
 
   @media ${theme.media.desktop} {
-    gap: 70px;
-    margin-bottom: 48px;
+    gap: 50px;
+    
   }
   @media ${theme.media.tablet} {
     grid-template-columns: 1fr;
@@ -160,7 +163,6 @@ const AboutItemTitle = styled.h3`
 `;
 
 const AboutText = styled.p`
-  max-width: 350px;
   font-size: 18px;
   line-height: 1.75;
 
