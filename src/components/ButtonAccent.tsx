@@ -41,7 +41,7 @@ export const ButtonAccent = styled.button`
     min-width: 125px;
     height: 42px;
     padding: 10px 22px;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   @media ${theme.media.mobile} {

@@ -108,10 +108,10 @@ const StyledAbout = styled.section`
     padding: 90px 0;
   }
   @media ${theme.media.tablet} {
-    padding: 70px 0;
+    padding: 72px 0;
   }
   @media ${theme.media.mobile} {
-    padding: 50px 0;
+    padding: 56px 0;
   }
 `
 
@@ -119,23 +119,20 @@ const AboutCards = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px;
-  margin-bottom: 60px;
-  margin-top: 60px;
-  width: 100%;
-  margin-inline: auto;
+  margin: 56px 0 60px;
 
   @media ${theme.media.desktop} {
-    gap: 50px;
-    
+    gap: 32px;
+    margin: 48px 0 52px;
   }
   @media ${theme.media.tablet} {
     grid-template-columns: 1fr;
     gap: 28px;
-    margin-bottom: 44px;
+    margin: 36px 0 44px;
   }
   @media ${theme.media.mobile} {
     gap: 24px;
-    margin-bottom: 36px;
+    margin: 30px 0 36px;
   }
 `;
 
@@ -169,11 +166,12 @@ const AboutText = styled.p`
   @media ${theme.media.tablet} {
     font-size: 14px;
     max-width: 520px;
+    line-height: 1.65;
   }
   @media ${theme.media.mobile} {
     max-width: 80%;
-    font-size: 12px;
-    line-height: 1.65;
+    font-size: 13px;
+    line-height: 1.6;
   }
 `;
 

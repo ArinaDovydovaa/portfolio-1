@@ -105,12 +105,11 @@ const StyledSkill = styled.div`
   @media ${theme.media.tablet} {
     width: 58px;
     height: 58px;
-    border-radius: 16px;
   }
   @media ${theme.media.mobile} {
     width: 42px;
     height: 42px;
-    border-radius: 14px;
+    border-radius: 12px;
   }
 `;
 
@@ -130,10 +129,9 @@ const IconWrapper = styled.div`
     height: 42px;
   }
   @media ${theme.media.tablet} {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
   }
-
   @media ${theme.media.mobile} {
     width: 26px;
     height: 26px;

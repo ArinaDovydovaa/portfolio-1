@@ -9,13 +9,12 @@ type SectionTitlePropsType = {
 
 export const SectionTitle = styled.h2<SectionTitlePropsType>`
   width: fit-content;
-
   display: flex;
   flex-direction: column;
   align-items: ${({align}) => align === 'left' ? 'flex-start' : 'center'};
   gap: 14px;
 
-  margin: ${({align}) => align === 'left' ? '0 0 48px' : '0 auto 20px'};
+  margin: ${({align}) => align === 'left' ? '0 0 48px' : '0 auto 36px'};
 
   color: ${({variant}) =>
     variant === 'light'
@@ -29,11 +28,11 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
   &::after {
     content: "";
     width: ${({lineWidth, align}) =>
-      lineWidth || (align === 'left' ? '420px' : '750px')};
-    max-width: calc(100vw - 32px);
+      lineWidth || (align === 'left' ? '420px' : '560px')};
+    max-width: calc(100vw - 40px);
     height: 2px;
 
-    margin-left: ${({align}) => align === 'left' ? '-15px' : '20px'};
+    margin-left: ${({align}) => align === 'left' ? '-15px' : 0};
 
     background: linear-gradient(
       90deg,
@@ -46,32 +45,31 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
 
   @media ${theme.media.desktop} {
     font-size: 52px;
-    margin: ${({align}) => align === 'left' ? '0 0 44px' : '0 auto 36px'};
+    margin-bottom: ${({align}) => align === 'left' ? '44px' : '36px'};
 
     &::after {
-      width: ${({align}) => align === 'left' ? '320px' : '650px'};
+      width: ${({align}) => align === 'left' ? '320px' : '480px'};
     }
   }
 
   @media ${theme.media.tablet} {
     font-size: 38px;
     gap: 12px;
-    margin: ${({align}) => align === 'left' ? '0 0 36px' : '0 auto 30px'};
+    margin-bottom: ${({align}) => align === 'left' ? '36px' : '30px'};
 
     &::after {
-      width: ${({align}) => align === 'left' ? '200px' : '500px'};
+      width: ${({align}) => align === 'left' ? '200px' : '360px'};
+      margin-left: ${({align}) => align === 'left' ? '-5px' : 0};
     }
   }
 
   @media ${theme.media.mobile} {
     font-size: 32px;
     gap: 10px;
-    margin: ${({align}) => align === 'left' ? '0 0 30px' : '0 auto 30px'};
+    margin-bottom: 28px;
 
     &::after {
-      width: ${({align}) => align === 'left' ? '180px' : '400px'};
-      margin-left: -5px;
-      margin-top: -5px;
+      width: ${({align}) => align === 'left' ? '200px' : '260px'};
     }
   }
 

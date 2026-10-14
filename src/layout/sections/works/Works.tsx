@@ -65,11 +65,34 @@ const StyledWorks = styled.section`
   background-color: ${theme.colors.primaryBg};
   padding: 150px 0;
 
+  @media ${theme.media.desktop} {
+    padding: 120px 0;
+  }
+  @media ${theme.media.tablet} {
+    padding: 90px 0;
+  }
+  @media ${theme.media.mobile} {
+    padding: 64px 0;
+  }
 `
 
 const WorksGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 32px;
+
+  @media ${theme.media.desktop} {
+    gap: 28px;
+  }
+
+  @media ${theme.media.tablet} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  @media ${theme.media.mobile} {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
 `
 

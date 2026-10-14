@@ -3,6 +3,7 @@ import {theme} from "@/styles/Theme.ts";
 
 export const Container = styled.div`
   max-width: 1440px;
+  width: 100%;
   padding: 0 80px;
   margin: 0 auto;
 
@@ -13,12 +14,10 @@ export const Container = styled.div`
   }
 
   @media ${theme.media.tablet} {
-    width: 100%;
     padding: 0 40px;
   }
 
   @media ${theme.media.mobile} {
-    width: 100%;
     padding: 0 20px;
   }
 `

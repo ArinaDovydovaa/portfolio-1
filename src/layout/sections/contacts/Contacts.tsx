@@ -71,6 +71,16 @@ export const Contacts = () => {
 const StyledContacts = styled.section`
   padding: 150px 0;
   background-color: ${theme.colors.darkBg};
+
+  @media ${theme.media.desktop} {
+    padding: 120px 0;
+  }
+  @media ${theme.media.tablet} {
+    padding: 90px 0;
+  }
+  @media ${theme.media.mobile} {
+    padding: 64px 0;
+  }
 `
 
 const StyledContent = styled.div`
@@ -78,6 +88,10 @@ const StyledContent = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 30px;
+
+  @media ${theme.media.mobile} {
+    gap: 24px;
+  }
 `
 const StyledInfo = styled.p`
   text-align: center;
@@ -87,13 +101,16 @@ const StyledInfo = styled.p`
 
   @media ${theme.media.desktop} {
     max-width: 60%;
+    font-size: 18px;
   }
   @media ${theme.media.tablet} {
-    max-width: 70%;
+    max-width: 80%;
+    font-size: 16px;
   }
-
   @media ${theme.media.mobile} {
-    max-width: 70%;
+    max-width: 80%;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
 `
@@ -107,6 +124,18 @@ const StyledForm = styled.form`
     resize: none;
     min-height: 150px;
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  @media ${theme.media.desktop} {
+    width: 75%;
+  }
+  @media ${theme.media.tablet} {
+    width: 90%;
+    gap: 24px;
+  }
+  @media ${theme.media.mobile} {
+    width: 100%;
+    gap: 20px;
   }
 `
 const Field = styled.input`
@@ -122,7 +151,6 @@ const Field = styled.input`
   color: ${theme.colors.lightTitleColor || '#fff'};
   transition: border-color 0.3s ease;
 
-
   &::placeholder {
     color: ${theme.colors.textPrimary};
     text-transform: capitalize;
@@ -133,18 +161,12 @@ const Field = styled.input`
     outline: 1px solid ${theme.colors.textPrimary};
   }
 
-
-  @media ${theme.media.desktop} {
-  }
-
   @media ${theme.media.tablet} {
+    font-size: 14px;
   }
-
   @media ${theme.media.mobile} {
+    font-size: 13px;
+    padding: 10px 8px;
   }
-
-
-
-
 
 `

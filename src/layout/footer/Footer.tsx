@@ -10,11 +10,10 @@ export const Footer = () => {
     <StyledFooter>
       <Container>
         <FooterContent>
-          <Logo />
-          <Copyright>© {new Date().getFullYear()} Арина Довыдова. Все права защищены.</Copyright>
-          <MenuCell>
-            {/*<Menu />*/}
-          </MenuCell>
+          <FooterLogo>
+            <Logo />
+          </FooterLogo>
+          <Copyright>© {new Date().getFullYear()} Арина Давыдова. Все права защищены.</Copyright>
         </FooterContent>
       </Container>
     </StyledFooter>
@@ -24,6 +23,10 @@ export const Footer = () => {
 const StyledFooter = styled.footer`
   background-color: ${theme.colors.darkBg};
   padding: 40px 0;
+
+  @media ${theme.media.tablet} {
+    padding: 28px 0;
+  }
 `
 
 const FooterContent = styled.div`
@@ -31,13 +34,46 @@ const FooterContent = styled.div`
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 20px;
+
+  @media ${theme.media.tablet} {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
 `
-const MenuCell = styled.div`
-  display: flex;
-  justify-content: flex-end;
-`
+const FooterLogo = styled.div`
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+
+  a {
+    height: 100%;
+  }
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+
+  @media ${theme.media.tablet} {
+    height: 32px;
+  }
+
+  @media ${theme.media.mobile} {
+    height: 28px;
+  }
+`;
+
 
 const Copyright = styled.small`
   color: ${theme.colors.textPrimary};
   font-size: 18px;
+
+  @media ${theme.media.desktop} {
+    font-size: 15px;
+  }
+
+  @media ${theme.media.mobile} {
+    font-size: 12px;
+  }
 `

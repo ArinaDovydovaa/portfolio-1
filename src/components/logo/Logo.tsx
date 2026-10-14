@@ -1,19 +1,19 @@
-import logo from './myLogo.png';
+import logo from './my-logo.png';
+import mobileLogo from './logo-mobile.png';
 import styled from 'styled-components';
 import {theme} from "@/styles/Theme.ts";
-import mobileLogo from './logo-mobile.png';
 
 export const Logo = () => {
   return (
     <LogoLink href="#home">
       <DesktopLogo
         src={logo}
-        alt="Arina Dovydova"
+        alt="Arina Davydova"
       />
 
       <MobileLogo
         src={mobileLogo}
-        alt="Arina Dovydova"
+        alt="Arina Davydova"
       />
     </LogoLink>
   );
@@ -28,7 +28,7 @@ const LogoLink = styled.a`
 
 const DesktopLogo = styled.img`
   width: auto;
-  height: 36px;
+  height: 100%;
   display: block;
   object-fit: contain;
 
@@ -50,9 +50,6 @@ const MobileLogo = styled.img`
   object-fit: contain;
 
   @media ${theme.media.tablet} {
-    display: block;
-  }
-  @media ${theme.media.mobile} {
     display: block;
   }
 `;

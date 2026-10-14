@@ -26,6 +26,7 @@ const StyledMain = styled.section`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   display: flex;
   align-items: center;
 
@@ -41,25 +42,27 @@ const StyledMain = styled.section`
       padding-bottom: 50px;
       padding-left: 300px;
     }
+  }
 
-    @media ${theme.media.tablet} {
-      aspect-ratio: 768 / 520;
-      background-position: 55% center;
+  @media ${theme.media.tablet} {
+    aspect-ratio: 768 / 520;
+    background-position: 55% center;
 
-      & > ${Container} {
-        padding-left: 120px;
-        padding-bottom: 55px;
-      }
+    & > ${Container} {
+      padding-left: 110px;
+      padding-bottom: 45px;
     }
-    @media ${theme.media.mobile} {
-      aspect-ratio: 576 / 450;
-      background-position: 65% center;
+  }
 
-      & > ${Container} {
-        padding-left: 70px;
-        padding-bottom: 80px;
-      }
+  @media ${theme.media.mobile} {
+    aspect-ratio: 576 / 450;
+    background-position: 65% center;
+
+    & > ${Container} {
+      padding-left: 64px;
+      padding-bottom: 50px;
     }
+  }
 `;
 
 
@@ -75,13 +78,12 @@ const MainContent = styled.div`
   }
 
   @media ${theme.media.mobile} {
-    max-width: 250px;
+    max-width: 240px;
   }
 `
 
 const MainIntro = styled.span`
   display: block;
-
   color: ${theme.colors.lightTitleColor};
   font-weight: 600;
   font-size: 60px;
@@ -101,8 +103,6 @@ const MainIntro = styled.span`
 `
 
 const MainTitle = styled.h1`
-  //margin: 0 0 50px;
-
   color: ${theme.colors.accentColor};
   font-weight: 700;
   font-size: 110px;
@@ -112,20 +112,17 @@ const MainTitle = styled.h1`
   @media ${theme.media.desktop} {
     font-size: 80px;
   }
-
   @media ${theme.media.tablet} {
     font-size: 50px;
   }
-
   @media ${theme.media.mobile} {
-    font-size: 40px;
+    font-size: 38px;
   }
 `
 
 const MainTitleLine = styled.span`
   display: block;
   margin-bottom: 50px;
-
   color: ${theme.colors.lightTitleColor};
   font-weight: 600;
   font-size: 75px;
@@ -135,14 +132,12 @@ const MainTitleLine = styled.span`
     font-size: 55px;
     margin-bottom: 42px;
   }
-
   @media ${theme.media.tablet} {
     font-size: 34px;
-    margin-bottom: 32px;
+    margin-bottom: 30px;
   }
-
   @media ${theme.media.mobile} {
     font-size: 28px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 `
