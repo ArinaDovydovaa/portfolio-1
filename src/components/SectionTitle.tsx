@@ -22,13 +22,13 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
       : theme.colors.darkTitleColor};
 
   font-weight: 600;
-  font-size: 60px;
+  font-size: ${theme.sizes.sectionTitle};
   line-height: 1.05;
 
   &::after {
     content: "";
     width: ${({lineWidth, align}) =>
-      lineWidth || (align === 'left' ? '420px' : '560px')};
+      lineWidth || (align === "left" ? "clamp(180px, 22vw, 420px)" : "clamp(260px, 39vw, 750px)")};
     max-width: calc(100vw - 40px);
     height: 2px;
 
@@ -44,7 +44,7 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
 
 
   @media ${theme.media.desktop} {
-    font-size: 52px;
+
     margin-bottom: ${({align}) => align === 'left' ? '44px' : '36px'};
 
     &::after {
@@ -53,7 +53,7 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
   }
 
   @media ${theme.media.tablet} {
-    font-size: 38px;
+
     gap: 12px;
     margin-bottom: ${({align}) => align === 'left' ? '36px' : '30px'};
 
@@ -64,7 +64,6 @@ export const SectionTitle = styled.h2<SectionTitlePropsType>`
   }
 
   @media ${theme.media.mobile} {
-    font-size: 32px;
     gap: 10px;
     margin-bottom: 28px;
 

@@ -57,7 +57,9 @@ export const Contacts = () => {
               placeholder={"Сообщение"}
               as={"textarea"}
             />
-            <ButtonAccent type="submit">Отправить</ButtonAccent>
+            <ButtonWrapper>
+              <ButtonAccent type="submit">Отправить</ButtonAccent>
+            </ButtonWrapper>
           </StyledForm>
 
           <SocialList items={socialItems} />
@@ -170,3 +172,14 @@ const Field = styled.input`
   }
 
 `
+
+const ButtonWrapper = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+
+  @media ${theme.media.mobile} {
+    justify-content: center;
+  }
+`;

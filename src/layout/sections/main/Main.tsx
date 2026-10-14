@@ -10,9 +10,11 @@ export const Main = () => {
       <Container>
         <MainContent>
           <MainIntro>Привет, я Арина </MainIntro>
-          <MainTitle> Frontend </MainTitle>
+          <MainTitle>Frontend</MainTitle>
           <MainTitleLine>разработчик</MainTitleLine>
-          <ButtonAccent>связаться</ButtonAccent>
+          <ButtonBox>
+            <ButtonAccent>связаться</ButtonAccent>
+          </ButtonBox>
         </MainContent>
       </Container>
     </StyledMain>
@@ -33,14 +35,18 @@ const StyledMain = styled.section`
   & > ${Container} {
     max-width: none;
     margin: 0;
+
+    // 1440 -> 1920: 300px -> 350px
+    padding-left: clamp(300px, 15.625vw + 75px, 350px);
+
     padding-bottom: 50px;
-    padding-left: 350px;
   }
 
   @media ${theme.media.desktop} {
     & > ${Container} {
+      // 768 -> 1440: 120px -> 300px
+      padding-left: clamp(120px, 26.78vw - 85.7px, 300px);
       padding-bottom: 50px;
-      padding-left: 300px;
     }
   }
 
@@ -49,8 +55,11 @@ const StyledMain = styled.section`
     background-position: 55% center;
 
     & > ${Container} {
-      padding-left: 110px;
-      padding-bottom: 45px;
+      // 576 -> 768: 70px -> 120px
+      padding-left: clamp(70px, 26.04vw - 80px, 120px);
+
+      // 576 -> 768: 80px -> 55px
+      padding-bottom: clamp(55px, -13.02vw + 155px, 80px);
     }
   }
 
@@ -59,85 +68,124 @@ const StyledMain = styled.section`
     background-position: 65% center;
 
     & > ${Container} {
-      padding-left: 64px;
-      padding-bottom: 50px;
+      padding-left: 70px;
+      padding-bottom: 80px;
     }
   }
 `;
 
-
 const MainContent = styled.div`
-  max-width: 620px;
+  // 1440px -> 1920px: 420px -> 520px
+  width: clamp(420px, 20.8333vw + 120px, 520px);
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
 
   @media ${theme.media.desktop} {
-    max-width: 500px;
-  }
+    // 768px -> 1440px: 300px -> 420px
+    width: clamp(300px, 17.8571vw + 162.857px, 420px);
 
+  }
   @media ${theme.media.tablet} {
-    max-width: 300px;
-  }
+    // 576px -> 768px: 240px -> 300px
+    width: clamp(240px, 31.25vw + 60px, 300px);
 
+  }
   @media ${theme.media.mobile} {
-    max-width: 240px;
-  }
-`
+    width: 240px;
 
+  }
+`;
 const MainIntro = styled.span`
-  display: block;
-  color: ${theme.colors.lightTitleColor};
+  color: ${theme.colors.lightTextColor};
   font-weight: 600;
-  font-size: 60px;
-  line-height: 1.2;
+
+  // 1440px -> 1920px: 48px -> 60px
+  font-size: clamp(48px, 2.5vw + 12px, 60px);
+  line-height: 1.15;
 
   @media ${theme.media.desktop} {
-    font-size: 45px;
+    // 768px -> 1440px: 30px -> 48px
+    font-size: clamp(30px, 2.6786vw + 9.4286px, 48px);
   }
 
   @media ${theme.media.tablet} {
-    font-size: 28px;
+    // 576px -> 768px: 22px -> 30px
+    font-size: clamp(22px, 4.1667vw - 2px, 30px);
   }
 
   @media ${theme.media.mobile} {
     font-size: 22px;
   }
-`
+`;
 
 const MainTitle = styled.h1`
+  margin: 0;
+
   color: ${theme.colors.accentColor};
   font-weight: 700;
-  font-size: 110px;
+
+  // 1440px -> 1920px: 88px -> 110px
+  font-size: clamp(88px, 4.5833vw + 22px, 110px);
   line-height: 0.95;
-  letter-spacing: 0.01em;
 
   @media ${theme.media.desktop} {
-    font-size: 80px;
+    // 768px -> 1440px: 56px -> 88px
+    font-size: clamp(56px, 4.7619vw + 19.4286px, 88px);
   }
+
   @media ${theme.media.tablet} {
-    font-size: 50px;
+    // 576px -> 768px: 40px -> 56px
+    font-size: clamp(40px, 8.3333vw - 8px, 56px);
   }
+
   @media ${theme.media.mobile} {
-    font-size: 38px;
+    font-size: 40px;
   }
-`
+`;
 
 const MainTitleLine = styled.span`
-  display: block;
-  margin-bottom: 50px;
-  color: ${theme.colors.lightTitleColor};
-  font-weight: 600;
-  font-size: 75px;
-  line-height: 1.2;
+  color: ${theme.colors.lightTextColor};
+  font-weight: 700;
+
+  font-size: clamp(58px, 3.5417vw + 7px, 75px);
+  line-height: 1.05;
 
   @media ${theme.media.desktop} {
-    font-size: 55px;
-    margin-bottom: 42px;
+    font-size: clamp(37px, 3.125vw + 13px, 58px);
+  }
+
+  @media ${theme.media.tablet} {
+    font-size: clamp(26px, 5.7292vw - 7px, 37px);
+  }
+
+  @media ${theme.media.mobile} {
+    font-size: 26px;
+  }
+`;
+
+const ButtonBox = styled.div`
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  // 1440px -> 1920px: 42px -> 56px
+  margin-top: clamp(42px, 2.9167vw, 56px);
+
+  @media ${theme.media.desktop} {
+    // 768px -> 1440px: 30px -> 42px
+    margin-top: clamp(30px, 1.7857vw + 16.286px, 42px);
   }
   @media ${theme.media.tablet} {
-    font-size: 34px;
-    margin-bottom: 30px;
+    // 576px -> 768px: 22px -> 30px
+    margin-top: clamp(22px, 4.1667vw - 2px, 30px);
   }
   @media ${theme.media.mobile} {
-    font-size: 28px;
-    margin-bottom: 24px;
+    margin-top: 22px;
   }
-`
+`;

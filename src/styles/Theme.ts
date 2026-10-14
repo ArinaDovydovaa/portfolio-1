@@ -27,6 +27,32 @@ export const theme = {
   },
 
 
+  sizes: {
+    sectionPadding: "clamp(64px, 7.8vw, 150px)",
+
+    containerPadding: "clamp(20px, 4.2vw, 80px)",
+
+    sectionTitle: "clamp(32px, 3.1vw, 60px)",
+
+    mainIntro: "clamp(22px, 3.1vw, 60px)",
+    mainTitle: "clamp(38px, 5.7vw, 110px)",
+    mainSubtitle: "clamp(28px, 3.9vw, 75px)",
+
+    text: "clamp(14px, 0.95vw, 18px)",
+    smallText: "clamp(12px, 0.75vw, 14px)",
+
+    buttonHeight: "clamp(38px, 3.1vw, 60px)",
+    buttonMinWidth: "clamp(112px, 9.7vw, 186px)",
+    buttonFont: "clamp(10px, 0.85vw, 16px)",
+
+    skillIcon: "clamp(42px, 3.9vw, 75px)",
+    skillSvg: "clamp(26px, 2.6vw, 50px)",
+
+    cardTitle: "clamp(17px, 1.05vw, 20px)",
+    cardPadding: "clamp(18px, 1.15vw, 22px)",
+  },
+
+
   media: {
     desktop: "screen and (max-width: 1440px)",
     tablet: "screen and (max-width: 768px)",
