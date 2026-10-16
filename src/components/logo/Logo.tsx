@@ -22,23 +22,29 @@ export const Logo = () => {
 const LogoLink = styled.a`
   display: inline-flex;
   align-items: center;
-  height: 100%;
+  flex-shrink: 0;
 
-`
-
-const DesktopLogo = styled.img`
-  width: auto;
-  height: 100%;
-  display: block;
-  object-fit: contain;
+  height: clamp(35px, calc(3.125vw - 10px), 50px);
 
   @media ${theme.media.desktop} {
-    height: 28px;
+    height: clamp(28px, calc(1.041667vw + 20px), 35px);
   }
   @media ${theme.media.tablet} {
-    display: none;
+    height: 44px;
   }
+
   @media ${theme.media.mobile} {
+    height: 40px;
+  }
+`;
+
+const DesktopLogo = styled.img`
+  display: block;
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+
+  @media ${theme.media.tablet} {
     display: none;
   }
 `;
@@ -53,4 +59,3 @@ const MobileLogo = styled.img`
     display: block;
   }
 `;
-

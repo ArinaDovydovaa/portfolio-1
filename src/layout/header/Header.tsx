@@ -35,29 +35,29 @@ const StyledHeader = styled.header`
 `;
 
 const HeaderContainer = styled.div`
-  max-width: 1760px;
+  max-width: 1730px;
   width: 100%;
   margin: 0 auto;
-  padding: 20px 40px;
 
+  padding: 5px 0 0;
 
   @media ${theme.media.desktop} {
-    padding: 18px 30px;
+    padding: 5px clamp(20px, calc(1.488095vw + 8.571429px), 30px) 0;
   }
-  @media ${theme.media.tablet} {
-    padding: 0 20px;
-  }
-  @media ${theme.media.mobile} {
-    padding: 0 15px;
-  }
-`
-const HeaderInner = styled.div`
-  height: 50px;
 
+  @media ${theme.media.tablet} {
+    padding: 5px clamp(15px, 2.604167vw, 20px);
+  }
+
+  @media ${theme.media.mobile} {
+    padding: 5px 15px ;
+  }
+`;
+
+
+const HeaderInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  @media ${theme.media.mobile} {
-    height: 45px;
-  }`
+`;

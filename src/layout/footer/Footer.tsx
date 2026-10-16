@@ -30,21 +30,20 @@ const StyledFooter = styled.footer`
 `
 
 const FooterContent = styled.div`
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
 
   @media ${theme.media.tablet} {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    flex-direction: column;
     text-align: center;
   }
-`
+`;
 const FooterLogo = styled.div`
   display: inline-flex;
   align-items: center;
-  height: 40px;
+  height: 30px;
 
   a {
     height: 100%;

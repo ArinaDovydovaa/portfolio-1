@@ -56,16 +56,7 @@ const Link = styled.a`
   }
 
 
-  @media screen and (max-width: 1440px) {
-    font-size: 18px;
-  }
-  @media screen and (max-width: 768px) {
-    font-size: 16px;
-  }
-  @media screen and (max-width: 576px) {
-    font-size: 14px;
-    &::after {
-      height: 1px;
-    }
+  @media ${theme.media.desktop} {
+    font-size: clamp(14px, calc(0.595238vw + 9.428571px), 18px);
   }
 `

@@ -33,20 +33,15 @@ const StyledMain = styled.section`
   align-items: center;
 
   & > ${Container} {
-    max-width: none;
-    margin: 0;
-
-    // 1440 -> 1920: 300px -> 350px
-    padding-left: clamp(300px, 15.625vw + 75px, 350px);
-
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 300px;
     padding-bottom: 50px;
   }
 
   @media ${theme.media.desktop} {
     & > ${Container} {
-      // 768 -> 1440: 120px -> 300px
       padding-left: clamp(120px, 26.78vw - 85.7px, 300px);
-      padding-bottom: 50px;
     }
   }
 
@@ -55,10 +50,7 @@ const StyledMain = styled.section`
     background-position: 55% center;
 
     & > ${Container} {
-      // 576 -> 768: 70px -> 120px
       padding-left: clamp(70px, 26.04vw - 80px, 120px);
-
-      // 576 -> 768: 80px -> 55px
       padding-bottom: clamp(55px, -13.02vw + 155px, 80px);
     }
   }
@@ -71,6 +63,26 @@ const StyledMain = styled.section`
       padding-left: 70px;
       padding-bottom: 80px;
     }
+  }
+
+  @media screen and (min-width: 1441px) {
+    height: 965px;
+    aspect-ratio: auto;
+
+    & > ${Container} {
+      padding-left: clamp(
+        110px,
+        calc(870px - 39.583333vw),
+        300px
+      );
+      padding-right: ${theme.sizes.containerPadding};
+    }
+  }
+
+  @media screen and (min-width: 1920px) {
+    height: auto;
+    aspect-ratio: 1920 / 965;
+    background-size: cover;
   }
 `;
 

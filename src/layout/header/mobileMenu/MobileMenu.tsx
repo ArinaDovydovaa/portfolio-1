@@ -9,7 +9,6 @@ export const MobileMenu = (props: { menuItems: Array<string> }) => {
   return (
     <StyleMobileMenu>
       <BurgerButton $isOpen={isOpen}><span /></BurgerButton>
-
       <MobileMenuPopup $isOpen={isOpen}>
         <ul>
           {props.menuItems.map((item, index) => {
@@ -28,10 +27,12 @@ const StyleMobileMenu = styled.nav`
   display: none;
 
   @media ${theme.media.tablet} {
-    display: block;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
   }
+`;
 
-`
 const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
@@ -60,9 +61,7 @@ const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
   }
 `
 const BurgerButton = styled.button<{ $isOpen: boolean }>`
-  position: fixed;
-  bottom: 2px;
-  right: 20px;
+  position: relative;
   z-index: 10000;
 
   width: 44px;
@@ -85,7 +84,7 @@ const BurgerButton = styled.button<{ $isOpen: boolean }>`
     position: relative;
     display: block;
 
-    width: 32px;
+    width: 26px;
     height: 2px;
 
     background-color: ${theme.colors.lightTitleColor};
@@ -102,7 +101,7 @@ const BurgerButton = styled.button<{ $isOpen: boolean }>`
       position: absolute;
       left: 0;
 
-      width: 32px;
+      width: 100%;
       height: 2px;
 
       background-color: ${theme.colors.lightTitleColor};
@@ -110,7 +109,7 @@ const BurgerButton = styled.button<{ $isOpen: boolean }>`
     }
 
     &::before {
-      top: -10px;
+      top: -9px;
 
       ${({$isOpen}) =>
         $isOpen &&
@@ -121,7 +120,7 @@ const BurgerButton = styled.button<{ $isOpen: boolean }>`
     }
 
     &::after {
-      top: 10px;
+      top: 9px;
 
       ${({$isOpen}) =>
         $isOpen &&
