@@ -45,6 +45,13 @@ const FooterContent = styled.div`
     small { grid-column: 1 / -1; grid-row: 2; }
     & > a { grid-column: 3; grid-row: 1; justify-self: end; }
   }
+
+  @media ${theme.media.mobile} {
+    grid-template-columns: 1fr;
+    gap: ${theme.spacing.md};
+    small { grid-column: 1; grid-row: 2; text-align: center; }
+    & > a { grid-column: 1; grid-row: 1; justify-self: end; }
+  }
 `;
 const FooterLogo = styled.div`
   display: inline-flex;
@@ -65,7 +72,7 @@ const FooterLogo = styled.div`
   }
 
   @media ${theme.media.mobile} {
-    height: 28px;
+    display: none;
   }
 `;
 
