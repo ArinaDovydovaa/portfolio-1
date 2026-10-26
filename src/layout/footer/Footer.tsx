@@ -1,9 +1,7 @@
-import styled from 'styled-components'
-import {Logo} from "@/components/logo/Logo";
-// import {Menu} from "@/layout/header/headerMenu/HeaderMenu.tsx";
-import {theme} from "@/styles/Theme";
-import {Container} from "@/components/Container";
-
+import styled from 'styled-components';
+import {Logo} from '@/components/logo/Logo';
+import {theme} from '@/styles/Theme';
+import {Container} from '@/components/Container';
 
 export const Footer = () => {
   return (
@@ -13,7 +11,8 @@ export const Footer = () => {
           <FooterLogo>
             <Logo />
           </FooterLogo>
-          <Copyright>© {new Date().getFullYear()} Арина Давыдова. Все права защищены.</Copyright>
+          <Copyright>© 2026 Арина Давыдова. Все права защищены.</Copyright>
+          <BackToTop href="#top" aria-label="Вернуться к началу страницы">↑</BackToTop>
         </FooterContent>
       </Container>
     </StyledFooter>
@@ -27,17 +26,24 @@ const StyledFooter = styled.footer`
   @media ${theme.media.tablet} {
     padding: 28px 0;
   }
-`
+`;
 
 const FooterContent = styled.div`
-  display: flex;
-  justify-content: space-between;
+  min-height: 48px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 20px;
+  gap: ${theme.spacing.lg};
+
+  small { text-align: center; }
 
   @media ${theme.media.tablet} {
-    flex-direction: column;
+    grid-template-columns: 1fr 44px 1fr;
     text-align: center;
+
+    & > div { grid-column: 2; justify-self: center; }
+    small { grid-column: 1 / -1; grid-row: 2; }
+    & > a { grid-column: 3; grid-row: 1; justify-self: end; }
   }
 `;
 const FooterLogo = styled.div`
@@ -63,9 +69,8 @@ const FooterLogo = styled.div`
   }
 `;
 
-
 const Copyright = styled.small`
-  color: ${theme.colors.textPrimary};
+  color: ${theme.colors.textMuted};
   font-size: 18px;
 
   @media ${theme.media.desktop} {
@@ -75,4 +80,18 @@ const Copyright = styled.small`
   @media ${theme.media.mobile} {
     font-size: 12px;
   }
-`
+`;
+
+const BackToTop = styled.a`
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid ${theme.colors.lightBorder};
+  border-radius: 50%;
+  color: ${theme.colors.lightTitleColor};
+  font-size: 24px;
+  transition: color 0.25s, border-color 0.25s, transform 0.25s;
+  &:hover { color: ${theme.colors.accentColor}; border-color: ${theme.colors.accentColor}; transform: translateY(-3px); }
+`;

@@ -1,187 +1,89 @@
-import styled from 'styled-components'
-import {ButtonAccent} from "@/components/ButtonAccent";
-import {theme} from "@/styles/Theme";
-
+import styled from 'styled-components';
+import {theme} from '@/styles/Theme';
 
 type WorkPropsType = {
-  title: string
-  text: string
-  src: string
+  title: string;
+  text: string;
+  src: string;
   tags: string[];
-}
+  projectHref?: string;
+  codeHref?: string;
+};
 
 export const Work = (props: WorkPropsType) => {
   return (
     <StyledWork>
-      <ImageWrapper>
-        <Image
-          src={props.src}
-          alt=""
-        />
-        <ButtonAccent>смотреть проект</ButtonAccent>
-      </ImageWrapper>
-
+      {/* Заменить #works реальными адресами, когда проекты будут опубликованы. */}
+      <ImageLink href={props.projectHref || '#works'} aria-label={`Открыть проект «${props.title}»`}>
+        <Image src={props.src} alt={props.title} loading="lazy" />
+      </ImageLink>
       <Description>
-        <Title>{props.title}</Title>
+        <Title><a href={props.projectHref || '#works'}>{props.title}</a></Title>
         <Text>{props.text}</Text>
         <TagsList>
-          {props.tags.map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
+          {props.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
         </TagsList>
-        <Link href={"#"}>GitHub → </Link>
+        <WorkLinks>
+          <a href={props.projectHref || '#works'}>Смотреть проект ↗</a>
+          <a href={props.codeHref || '#works'} aria-label={`Код проекта «${props.title}» на GitHub`}>GitHub →</a>
+        </WorkLinks>
       </Description>
     </StyledWork>
   );
 };
 
-const StyledWork = styled.div`
-  width: 100%;
-  background: ${theme.colors.primaryBg};
-  border: 1px solid rgba(37, 37, 37, 0.08);
-  border-radius: 18px;
+const StyledWork = styled.article`
   overflow: hidden;
-  box-shadow: ${theme.colors.shadowMd};
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 26px 70px rgba(37, 37, 37, 0.11);
-  }
-
-  @media ${theme.media.mobile} {
-    border-radius: 14px;
-  }
-`
-
-const ImageWrapper = styled.div`
-  aspect-ratio: 12 / 10;
-  position: relative;
-  overflow: hidden;
-
-  &:hover {
-    &::before {
-      content: " ";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(4px);
-    }
-
-    ${ButtonAccent} {
-      opacity: 1;
-    }
-  }
-
-  ${ButtonAccent} {
-    opacity: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  @media ${theme.media.tablet} {
-    aspect-ratio: 16 / 11;
-  }
-
-  @media ${theme.media.mobile} {
-    aspect-ratio: 16 / 10;
-  }
-
-`
+  border: 1px solid ${theme.colors.border};
+  border-radius: 14px;
+  background: ${theme.colors.secondaryBg};
+  transition: transform 0.2s, box-shadow 0.2s;
+  &:hover { transform: translateY(-4px); box-shadow: ${theme.colors.shadowMd}; }
+`;
 const Image = styled.img`
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-`
-const Description = styled.div`
-  padding: 22px;
-
-  @media ${theme.media.desktop} {
-    padding: 20px;
-  }
-
-  @media ${theme.media.mobile} {
-    padding: 18px;
-  }
-`
+  aspect-ratio: 1;
+  object-fit: contain;
+  transition: transform 0.35s;
+`;
+const Description = styled.div`padding: 24px;`;
 const Title = styled.h3`
-  margin: 0 0 10px;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.25;
-  text-align: left;
-
-  @media ${theme.media.desktop} {
-    font-size: 18px;
-  }
-
-  @media ${theme.media.mobile} {
-    font-size: 17px;
-  }
-`
-const Text = styled.p`
-  line-height: 1.55;
-
-  @media ${theme.media.mobile} {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-`
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: 600;
+  a { transition: color 0.25s; }
+  a:hover { color: ${theme.colors.accentHover}; }
+`;
+const Text = styled.p`font-size: 15px;`;
 const TagsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 18px 0 20px;
-
-  @media ${theme.media.mobile} {
-    gap: 6px;
-    margin: 14px 0 18px;
-  }
-`
-
+  margin-top: 22px;
+`;
 const Tag = styled.li`
-  padding: 6px 10px;
-  border-radius: 999px;
-  background-color: ${theme.colors.secondaryBg};
-  color: ${theme.colors.textMuted};
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
-
-  @media ${theme.media.mobile} {
-    padding: 5px 8px;
-    font-size: 11px;
-  }
-`
-
-const Link = styled.a`
-  display: inline-flex;
-  align-items: center;
+  padding: 5px 10px;
+  background: ${theme.colors.primaryBg};
+  border: 1px solid ${theme.colors.border};
+  border-radius: 4px;
   color: ${theme.colors.textPrimary};
+  font-size: 12px;
+`;
+
+const ImageLink = styled.a`
+  display: block;
+  overflow: hidden;
+  &:hover img, &:focus-visible img { transform: scale(1.025); }
+`;
+const WorkLinks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: ${theme.spacing.md};
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid ${theme.colors.border};
   font-size: 14px;
-  font-weight: 700;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: ${theme.colors.accentColor};
-  }
-
-  @media ${theme.media.mobile} {
-    font-size: 13px;
-  }
-`
-
-
-
-
-
-
-
-
+  a { transition: color 0.25s; }
+  a:hover { color: ${theme.colors.accentHover}; }
+`;

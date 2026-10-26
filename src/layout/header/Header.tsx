@@ -1,63 +1,48 @@
 import styled from 'styled-components';
-import {Logo} from "../../components/logo/Logo";
-import {HeaderMenu} from "@/layout/header/headerMenu/HeaderMenu";
-import {theme} from "@/styles/Theme.ts";
-import {MobileMenu} from "@/layout/header/mobileMenu/MobileMenu.tsx";
+import {Logo} from '@/components/logo/Logo';
+import {Container} from '@/components/Container';
+import {MobileMenu} from './mobileMenu/MobileMenu';
+import {HeaderMenu} from './headerMenu/HeaderMenu';
+import {theme} from '@/styles/Theme';
 
-const items = ["Главная", "Обо мне", "Проекты", "Контакты"]
-
+const items = [
+  {title: 'Главная', href: '#home'},
+  {title: 'Обо мне', href: '#about'},
+  {title: 'Проекты', href: '#works'},
+  {title: 'Контакты', href: '#contact'},
+];
 
 export const Header = () => {
   return (
-    <StyledHeader>
-      <HeaderContainer>
+    <StyledHeader id="top">
+      <Container>
         <HeaderInner>
           <Logo />
           <HeaderMenu menuItems={items} />
           <MobileMenu menuItems={items} />
         </HeaderInner>
-      </HeaderContainer>
+      </Container>
     </StyledHeader>
   );
 };
 
 const StyledHeader = styled.header`
-  position: fixed;
-  left: 0;
-  right: 0;
+  position: absolute;
   top: 0;
-  z-index: 1000;
-
-  background-color: rgba(30, 30, 30, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-`;
-
-const HeaderContainer = styled.div`
-  max-width: 1730px;
+  left: 0;
   width: 100%;
-  margin: 0 auto;
-
-  padding: 5px 0 0;
-
-  @media ${theme.media.desktop} {
-    padding: 5px clamp(20px, calc(1.488095vw + 8.571429px), 30px) 0;
-  }
-
-  @media ${theme.media.tablet} {
-    padding: 5px clamp(15px, 2.604167vw, 20px);
-  }
+  z-index: 10;
+  background: transparent;
+`;
+const HeaderInner = styled.div`
+  min-height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: ${theme.spacing.lg};
 
   @media ${theme.media.mobile} {
-    padding: 5px 15px ;
+    min-height: 92px;
+    gap: ${theme.spacing.sm};
   }
-`;
-
-
-const HeaderInner = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
 `;

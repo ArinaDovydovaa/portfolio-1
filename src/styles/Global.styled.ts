@@ -1,57 +1,31 @@
 import {createGlobalStyle} from 'styled-components';
-import {theme} from "@/styles/Theme";
+import {theme} from '@/styles/Theme';
 
 export const GlobalStyle = createGlobalStyle`
-  *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-padding-top: 24px; scroll-behavior: smooth; }
   body {
-    margin: 0;
-    overflow-x: hidden;
-    font-family: 'Source+Sans+3', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Source Sans 3', sans-serif;
     color: ${theme.colors.textPrimary};
-    background-color: ${theme.colors.primaryBg};
-    line-height: 1.2;
+    background: ${theme.colors.primaryBg};
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
-
-  a {
-    text-decoration: none;
-    color: ${theme.colors.lightTextColor};
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+  button, input, textarea { font: inherit; }
+  button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid ${theme.colors.accentColor};
+    outline-offset: 5px;
   }
-
-  ul {
-    list-style: none;
-
+  section { padding: ${theme.sizes.sectionPadding} 0; }
+  p { font-size: 17px; line-height: 1.75; color: ${theme.colors.textSecondary}; }
+  h1, h2, h3 { color: ${theme.colors.darkTitleColor}; line-height: 1.15; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
   }
-
-  section {
-    padding: 70px 0;
-  }
-
-  p {
-    margin: 0;
-    font-family: "Open Sans", sans-serif;
-    font-size: 16px;
-    line-height: 1.85182;
-    letter-spacing: 0.01em;
-    color: ${theme.colors.textSecondary};
-  }
-
-  h3 {
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 1.35;
-    letter-spacing: 0.01em;
-    text-align: center;
-    color: ${theme.colors.darkTitleColor};
-  }
-`
+  ::selection { background: ${theme.colors.accentColor}; color: ${theme.colors.darkBg}; }
+`;

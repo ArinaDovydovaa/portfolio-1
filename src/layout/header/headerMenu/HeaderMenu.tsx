@@ -1,62 +1,28 @@
-import styled from 'styled-components'
-import {theme} from "@/styles/Theme.ts";
+import styled from 'styled-components';
+import {theme} from '@/styles/Theme';
 
+type MenuItemType = { title: string; href: string };
 
-export const HeaderMenu = (props: { menuItems: Array<string> }) => {
-
+export const HeaderMenu = (props: {menuItems: MenuItemType[]}) => {
   return (
-    <StyledHeaderMenu>
+    <StyledHeaderMenu aria-label="Основная навигация">
       <ul>
-        {props.menuItems.map((item, index) => {
-          return <ListItem key={index}>
-            <Link href="#">{item}</Link>
-          </ListItem>
-        })}
+        {props.menuItems.map(item => (
+          <li key={item.href}><Link href={item.href}>{item.title}</Link></li>
+        ))}
       </ul>
     </StyledHeaderMenu>
-  )
-}
+  );
+};
 
 const StyledHeaderMenu = styled.nav`
-  ul {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-  }
-
-  @media ${theme.media.tablet} {
-    display: none;
-  }
-
-`
-const ListItem = styled.li`
-`
-
+  ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px 28px; }
+  @media ${theme.media.tablet} { display: none; }
+`;
 const Link = styled.a`
-  display: inline-block;
   color: ${theme.colors.lightTitleColor};
-  font-weight: 400;
-  font-size: 20px;
-  letter-spacing: 0.02em;
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 2px;
-    width: 0;
-    height: 2px;
-    background-color: ${theme.colors.accentColor};
-    transition: width 0.3s ease;
-  }
-
-  &:hover::after {
-    width: 100%;
-  }
-
-
-  @media ${theme.media.desktop} {
-    font-size: clamp(14px, calc(0.595238vw + 9.428571px), 18px);
-  }
-`
+  font-size: 16px;
+  transition: color 0.25s;
+  &:hover { color: ${theme.colors.accentColor}; }
+  @media ${theme.media.mobile} { font-size: 14px; }
+`;

@@ -1,145 +1,78 @@
-import styled, {css} from 'styled-components'
-import {theme} from "@/styles/Theme.ts";
+import styled from 'styled-components';
+import {theme} from '@/styles/Theme';
 
+type MenuItemType = {title: string; href: string};
 
-export const MobileMenu = (props: { menuItems: Array<string> }) => {
-
-  const isOpen = false;
-
+// details/summary открывают меню без обработчиков JavaScript.
+export const MobileMenu = (props: {menuItems: MenuItemType[]}) => {
   return (
-    <StyleMobileMenu>
-      <BurgerButton $isOpen={isOpen}><span /></BurgerButton>
-      <MobileMenuPopup $isOpen={isOpen}>
+    <StyledMobileMenu>
+      <BurgerButton aria-label="Открыть или закрыть меню">
+        <span /><span /><span />
+      </BurgerButton>
+      <MobileMenuPopup aria-label="Мобильная навигация">
         <ul>
-          {props.menuItems.map((item, index) => {
-            return (
-              <ListItem key={index}>
-                <Link href=" ">{item}</Link>
-              </ListItem>)
-          })}
+          {props.menuItems.map(item => (
+            <li key={item.href}><Link href={item.href}>{item.title}</Link></li>
+          ))}
         </ul>
       </MobileMenuPopup>
-    </StyleMobileMenu>
+    </StyledMobileMenu>
   );
 };
 
-const StyleMobileMenu = styled.nav`
-  display: none;
-
-  @media ${theme.media.tablet} {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
-`;
-
-const MobileMenuPopup = styled.div<{ $isOpen: boolean }>`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9999;
-
-  width: 100vw;
-  min-height: 100vh;
-
-  display: ${({$isOpen}) => ($isOpen ? 'flex' : 'none')};
-  align-items: center;
-  justify-content: center;
-
-  background-color: rgba(30, 30, 30, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 34px;
-  }
-`
-const BurgerButton = styled.button<{ $isOpen: boolean }>`
-  position: relative;
-  z-index: 10000;
-
+const BurgerButton = styled.summary`
   width: 44px;
   height: 44px;
-
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-
-  border: none;
-  background-color: transparent;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid ${theme.colors.lightBorder};
+  border-radius: 50%;
+  color: ${theme.colors.lightTextColor};
   cursor: pointer;
-
-  @media ${theme.media.mobile} {
-    width: 40px;
-    height: 40px;
-  }
-
+  list-style: none;
+  transition: border-color 0.25s, background-color 0.25s;
+  &::-webkit-details-marker { display: none; }
+  &:hover { border-color: ${theme.colors.accentColor}; background: ${theme.colors.lightHover}; }
+  &:focus-visible { outline: 2px solid ${theme.colors.accentColor}; outline-offset: 5px; }
   span {
-    position: relative;
-    display: block;
-
-    width: 26px;
-    height: 2px;
-
-    background-color: ${theme.colors.lightTitleColor};
-    transition: background-color 0.3s ease;
-
-    ${({$isOpen}) =>
-      $isOpen &&
-      css`
-        background-color: transparent;
-      `}
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-
-      width: 100%;
-      height: 2px;
-
-      background-color: ${theme.colors.lightTitleColor};
-      transition: transform 0.3s ease, top 0.3s ease;
-    }
-
-    &::before {
-      top: -9px;
-
-      ${({$isOpen}) =>
-        $isOpen &&
-        css`
-          top: 0;
-          transform: rotate(45deg);
-        `}
-    }
-
-    &::after {
-      top: 9px;
-
-      ${({$isOpen}) =>
-        $isOpen &&
-        css`
-          top: 0;
-          transform: rotate(-45deg);
-        `}
-    }
+    width: 20px;
+    height: 1px;
+    background: currentColor;
+    transition: transform 0.25s, opacity 0.25s;
   }
 `;
-
+const StyledMobileMenu = styled.details`
+  display: none;
+  position: relative;
+  @media ${theme.media.tablet} { display: block; }
+  &[open] ${BurgerButton} {
+    border-color: ${theme.colors.accentColor};
+    span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+`;
+const MobileMenuPopup = styled.nav`
+  position: absolute;
+  top: calc(100% + 16px);
+  right: 0;
+  width: min(280px, calc(100vw - 40px));
+  padding: 12px;
+  background: ${theme.colors.darkBg};
+  border: 1px solid ${theme.colors.lightBorderSoft};
+  border-radius: 12px;
+  box-shadow: 0 16px 36px ${theme.colors.shadowColor};
+`;
 const Link = styled.a`
-  font-family: "Source Code Pro", sans-serif;
-  font-weight: 400;
-  font-size: 30px;
-  text-align: center;
-  color: ${theme.colors.lightTitleColor};
-`
-
-const ListItem = styled.li`
-`
-
+  display: block;
+  padding: 12px 16px;
+  border-radius: 6px;
+  color: ${theme.colors.lightTextColor};
+  font-size: 17px;
+  transition: color 0.25s, background-color 0.25s;
+  &:hover { color: ${theme.colors.accentColor}; background: ${theme.colors.lightHover}; }
+`;

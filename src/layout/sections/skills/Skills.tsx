@@ -1,26 +1,26 @@
 import styled from 'styled-components';
 import {SectionTitle} from '@/components/SectionTitle';
-import {Skill} from '@/layout/sections/about/skill/Skill'
-import {Container} from "@/components/Container";
+import {Skill} from '@/layout/sections/skills/skill/Skill';
+import {Container} from '@/components/Container';
 
-import HtmlIcon from '../../../assets/icons/html.svg?react';
-import CssIcon from '../../../assets/icons/css.svg?react';
-import JsIcon from '../../../assets/icons/js.svg?react';
-import ReactIcon from '../../../assets/icons/react.svg?react';
-import FigmaIcon from '../../../assets/icons/figma.svg?react';
-import GitHubIcon from '../../../assets/icons/github.svg?react';
+import HtmlIcon from '@/assets/icons/html.svg?react';
+import CssIcon from '@/assets/icons/css.svg?react';
+import JsIcon from '@/assets/icons/js.svg?react';
+import ReactIcon from '@/assets/icons/react.svg?react';
+import FigmaIcon from '@/assets/icons/figma.svg?react';
+import GitHubIcon from '@/assets/icons/github.svg?react';
 import StyledComponentsIcon
-  from '../../../assets/icons/styled-components.svg?react';
-import ViteIcon from '../../../assets/icons/vite.svg?react';
-import TypeScriptIcon from '../../../assets/icons/type-script.svg?react';
-import {theme} from "@/styles/Theme";
-
+  from '@/assets/icons/styled-components.svg?react';
+import ViteIcon from '@/assets/icons/vite.svg?react';
+import TypeScriptIcon from '@/assets/icons/type-script.svg?react';
+import {theme} from '@/styles/Theme';
 
 export const Skills = () => {
   return (
     <StyledSkills id="skills">
       <Container>
-        <SectionTitle align="left">Навыки</SectionTitle>
+        <SectionTitle $align="center">Мои инструменты</SectionTitle>
+        <SkillsText>Технологии, с которыми я создаю интерфейсы и работаю над проектами.</SkillsText>
 
         <SkillsGrid>
           <Skill
@@ -75,25 +75,19 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
-  padding: 64px 0;
-  background-color: ${theme.colors.secondaryBg};
-`
-
+  background: ${theme.colors.secondaryBg};
+`;
 const SkillsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(9, 64px);
-  justify-content: space-between;
-  gap: 18px;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: ${theme.spacing.sm};
+  @media ${theme.media.smallDesktop} { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  @media ${theme.media.mobile} { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+`;
 
-  @media screen and (max-width: 1000px) {
-    grid-template-columns: repeat(5, 64px);
-    justify-content: center;
-  }
-
-  @media screen and (max-width: 560px) {
-    grid-template-columns: repeat(3, 64px);
-  }
-
-`
-
-
+const SkillsText = styled.p`
+  max-width: 480px;
+  margin: -12px auto 40px;
+  text-align: center;
+  font-size: 16px;
+`;

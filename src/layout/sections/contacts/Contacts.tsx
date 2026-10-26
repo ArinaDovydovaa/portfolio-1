@@ -1,185 +1,62 @@
 import styled from 'styled-components';
-import {SectionTitle} from '@/components/SectionTitle'
+import {SectionTitle} from '@/components/SectionTitle';
 import {SocialList} from '@/components/socialList/SocialList';
-import TelegramIcon from '../../../assets/icons/telegram.svg?react'
-import GmailIcon from '../../../assets/icons/gmail.svg?react'
-import VkIcon from '../../../assets/icons/vk.svg?react'
-import ZoomIcon from '../../../assets/icons/zoom.svg?react'
-import {ButtonAccent} from "@/components/ButtonAccent";
-import {Container} from "@/components/Container";
-import {theme} from "@/styles/Theme";
+import {ButtonAccent} from '@/components/ButtonAccent';
+import {Container} from '@/components/Container';
+import {theme} from '@/styles/Theme';
+import TelegramIcon from '@/assets/icons/telegram.svg?react';
+import GmailIcon from '@/assets/icons/gmail.svg?react';
+import VkIcon from '@/assets/icons/vk.svg?react';
 
 const socialItems = [
-  {
-    icon: TelegramIcon,
-    href: 'https://t.me/Arina_Dovydova',
-    label: 'telegram',
-  },
-  {
-    icon: GmailIcon,
-    href: 'mailto:arina.dovydova95@gmail.com',
-    label: 'Gmail',
-  },
-  {
-    icon: VkIcon,
-    href: 'https://vk.ru/id183793786',
-    label: 'vk',
-  },
-  {
-    icon: ZoomIcon,
-    href: 'https://zoom.us/j/your-meeting-id',
-    label: 'zoom',
-  },
-
+  {icon: TelegramIcon, href: 'https://t.me/Arina_Dovydova', label: 'Telegram'},
+  {icon: GmailIcon, href: 'mailto:arina.dovydova95@gmail.com', label: 'Gmail'},
+  {icon: VkIcon, href: 'https://vk.ru/id183793786', label: 'ВКонтакте'},
 ];
 
 export const Contacts = () => {
   return (
     <StyledContacts id="contact">
       <Container>
-        <SectionTitle
-          align="center"
-          variant="light"
-        >
-          Давайте работать вместе
-        </SectionTitle>
-
-        <StyledContent>
-          <StyledInfo>
-            Я открыта к новым проектам)
-            Если вам нужен аккуратный интерфейс с вниманием к деталям — напишите мне.
-          </StyledInfo>
-
-          <StyledForm>
-            <Field placeholder={"Имя"} />
-            <Field placeholder={"Тема"} />
-            <Field
-              placeholder={"Сообщение"}
-              as={"textarea"}
-            />
-            <ButtonWrapper>
-              <ButtonAccent type="submit">Отправить</ButtonAccent>
-            </ButtonWrapper>
-          </StyledForm>
-
+        <ContactContent>
+          <ContactLabel>ЕСТЬ ИДЕЯ ПРОЕКТА?</ContactLabel>
+          <SectionTitle $align="center" $variant="light">Давайте работать вместе</SectionTitle>
+          <ContactText>Открыта к новым проектам и сотрудничеству. Расскажите о своей идее — обсудим интерфейс и детали.</ContactText>
+          <ButtonAccent as="a" href="mailto:arina.dovydova95@gmail.com">Написать мне ↗</ButtonAccent>
+          <EmailLink href="mailto:arina.dovydova95@gmail.com">arina.dovydova95@gmail.com</EmailLink>
           <SocialList items={socialItems} />
-        </StyledContent>
+        </ContactContent>
       </Container>
     </StyledContacts>
   );
 };
 
-
-const StyledContacts = styled.section`
-  padding: 150px 0;
-  background-color: ${theme.colors.darkBg};
-
-  @media ${theme.media.desktop} {
-    padding: 120px 0;
-  }
-  @media ${theme.media.tablet} {
-    padding: 90px 0;
-  }
-  @media ${theme.media.mobile} {
-    padding: 64px 0;
-  }
-`
-
-const StyledContent = styled.div`
+const StyledContacts = styled.section`background: ${theme.colors.darkBg};`;
+const ContactContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-
-  @media ${theme.media.mobile} {
-    gap: 24px;
-  }
-`
-const StyledInfo = styled.p`
   text-align: center;
-  font-size: 20px;
-  max-width: 50%;
-
-
-  @media ${theme.media.desktop} {
-    max-width: 60%;
-    font-size: 18px;
-  }
-  @media ${theme.media.tablet} {
-    max-width: 80%;
-    font-size: 16px;
-  }
-  @media ${theme.media.mobile} {
-    max-width: 80%;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-`
-const StyledForm = styled.form`
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-
-  textarea {
-    resize: none;
-    min-height: 150px;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
-  }
-
-  @media ${theme.media.desktop} {
-    width: 75%;
-  }
-  @media ${theme.media.tablet} {
-    width: 90%;
-    gap: 24px;
-  }
-  @media ${theme.media.mobile} {
-    width: 100%;
-    gap: 20px;
-  }
-`
-const Field = styled.input`
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid ${theme.colors.textMuted || '#444'};
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
-
-  padding: 12px 0;
+  svg { width: 24px; height: 24px; }
+  ul { gap: ${theme.spacing.lg}; }
+  ${SectionTitle} { margin-bottom: 24px; }
+`;
+const ContactLabel = styled.span`
+  margin-bottom: 20px;
+  color: ${theme.colors.accentColor};
+  font-size: 11px;
+  letter-spacing: 0.16em;
+`;
+const ContactText = styled.p`
+  max-width: 440px;
+  margin-bottom: 30px;
+  color: ${theme.colors.textMuted};
   font-size: 16px;
-  font-family: inherit;
-  color: ${theme.colors.lightTitleColor || '#fff'};
-  transition: border-color 0.3s ease;
-
-  &::placeholder {
-    color: ${theme.colors.textPrimary};
-    text-transform: capitalize;
-    padding-left: 10px;
-  }
-
-  &:focus-visible {
-    outline: 1px solid ${theme.colors.textPrimary};
-  }
-
-  @media ${theme.media.tablet} {
-    font-size: 14px;
-  }
-  @media ${theme.media.mobile} {
-    font-size: 13px;
-    padding: 10px 8px;
-  }
-
-`
-
-const ButtonWrapper = styled.div`
-  width: 100%;
-
-  display: flex;
-  justify-content: flex-end;
-
-  @media ${theme.media.mobile} {
-    justify-content: center;
-  }
+`;
+const EmailLink = styled.a`
+  margin: 20px 0 30px;
+  color: ${theme.colors.textMuted};
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  &:hover { color: ${theme.colors.accentColor}; }
 `;

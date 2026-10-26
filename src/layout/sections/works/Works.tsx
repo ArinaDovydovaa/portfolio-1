@@ -1,22 +1,22 @@
-import styled from 'styled-components'
-import {SectionTitle} from '@/components/SectionTitle'
-import {Work} from './work/Work'
-import {Container} from "@/components/Container";
-import {theme} from "@/styles/Theme.ts";
+import styled from 'styled-components';
+import {SectionTitle} from '@/components/SectionTitle';
+import {Work} from './work/Work';
+import {Container} from '@/components/Container';
+import {theme} from '@/styles/Theme.ts';
 
-import socialImg from '../../../assets/images/social-network.webp'
-import storeImg from '../../../assets/images/online-store.webp'
-import blogImg from '../../../assets/images/blog.webp'
-import weatherImg from '../../../assets/images/weather.webp'
-import notesImg from '../../../assets/images/notes.webp'
-import timerImg from '../../../assets/images/timer.webp'
-
+import socialImg from '@/assets/images/social-network.webp';
+import storeImg from '@/assets/images/online-store.webp';
+import blogImg from '@/assets/images/blog.webp';
+import weatherImg from '@/assets/images/weather.webp';
+import notesImg from '@/assets/images/notes.webp';
+import timerImg from '@/assets/images/timer.webp';
 
 export const Works = () => {
   return (
     <StyledWorks id="works">
       <Container>
-        <SectionTitle align="left">Проекты</SectionTitle>
+        <SectionTitle $align="center">Мои проекты</SectionTitle>
+        <WorksText>От небольших приложений до многостраничных интерфейсов — здесь собраны мои работы.</WorksText>
 
         <WorksGrid>
           <Work
@@ -63,18 +63,8 @@ export const Works = () => {
 
 const StyledWorks = styled.section`
   background-color: ${theme.colors.primaryBg};
-  padding: 150px 0;
 
-  @media ${theme.media.desktop} {
-    padding: 120px 0;
-  }
-  @media ${theme.media.tablet} {
-    padding: 90px 0;
-  }
-  @media ${theme.media.mobile} {
-    padding: 64px 0;
-  }
-`
+`;
 
 const WorksGrid = styled.div`
   display: grid;
@@ -85,14 +75,20 @@ const WorksGrid = styled.div`
     gap: 28px;
   }
 
-  @media ${theme.media.tablet} {
+  @media ${theme.media.smallDesktop} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: ${theme.spacing.lg};
   }
 
   @media ${theme.media.mobile} {
     grid-template-columns: 1fr;
     gap: 22px;
   }
-`
+`;
 
+const WorksText = styled.p`
+  max-width: 480px;
+  margin: -12px auto 44px;
+  text-align: center;
+  font-size: 16px;
+`;

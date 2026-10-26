@@ -1,7 +1,7 @@
 import logo from './my-logo.png';
 import mobileLogo from './logo-mobile.png';
 import styled from 'styled-components';
-import {theme} from "@/styles/Theme.ts";
+import {theme} from '@/styles/Theme.ts';
 
 export const Logo = () => {
   return (

@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# Портфолио Арины Давыдовой
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Визуальная версия на React, TypeScript и styled-components. Обработчиков событий, состояния, фильтрации и отправки формы пока нет. Навигация по секциям работает обычными HTML-ссылками. Блок контактов ведёт прямо на почту и в социальные сети. Ссылки на реальные проекты можно добавить позже, когда будут адреса.
 
-Currently, two official plugins are available:
+## Запуск
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm install
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+`npm run build` — проверка TypeScript и сборка. `npm run lint` — проверка ESLint.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Как устроены файлы
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- `src/App.tsx` — порядок секций страницы.
+- `src/layout/header` — шапка и навигация `HeaderMenu`.
+- `src/layout/sections/main/Main.tsx` — первый экран с фотографией.
+- `src/layout/sections/about/About.tsx` — три блока о подходе к работе.
+- `src/layout/sections/skills/Skills.tsx` — список технологий. Использует существующий `skills/skill/Skill.tsx`.
+- `src/layout/sections/works/Works.tsx` — проекты; `work/Work.tsx` — одна карточка.
+- `src/layout/sections/contacts/Contacts.tsx` — контакты и призыв к сотрудничеству.
+- `src/layout/footer/Footer.tsx` — подвал.
+- `src/components` — общие элементы: контейнер, заголовок, кнопки, логотип, социальные ссылки.
+- `src/styles/Theme.ts` — цвета, размеры и медиазапросы.
+- `src/styles/Global.styled.ts` — сброс и общие стили.
+- `src/assets` — исходные картинки и иконки.
+
+## Принцип компонентов
+
+Сверху файла идут импорты, затем типы props и компонент с разметкой, внизу — styled-компоненты. Повторяющиеся карточки получают данные через props. Например, содержание проектов меняется в `Works.tsx`, внешний вид всех карточек — в `Work.tsx`.
+
+Навыки выведены только в `Skills`, без дублирования в `About`. Неиспользуемые `TabMenu`, `Button`, `Text` и `FlexWrapper` удалены. На планшетах и телефонах используется `MobileMenu`: нативный `details/summary`, без JavaScript. После перехода по ссылке меню можно закрыть повторным нажатием на бургер.
+
+## Следующий этап
+
+Добавить настоящие адреса проектов и репозиториев, затем отдельно реализовать нужную интерактивность. Тексты описывают материалы исходного портфолио; возможности самих проектов отдельно не проверялись.
+
+Визуальный ориентир — присланные скриншоты макета для ширины 1440px. По просьбе автора оформление переработано свободно: фото на первом экране, двухколоночный блок обо мне, инструменты, проекты и лаконичные контакты. Чужие отзывы и неподтверждённая статистика не добавлены.
+
+## Ссылки проектов
+
+В `Work.tsx` картинка, заголовок и кнопки являются ссылками. Пока `projectHref` и `codeHref` ведут на `#works`. Чтобы подключить реальные адреса, передайте эти props в `Works.tsx`. Технологические теги остаются обычным текстом. Кнопка наверх в футере ведёт на `#top`.
+
+## Оформление и порядок секций
+
+Страница: первый экран → обо мне → проекты → инструменты → контакты. Цвета, общие интервалы и точки адаптива находятся в `Theme.ts`. Сетка проектов становится двухколоночной на 1000px, одноколоночной на 576px. Свойства `$align` и `$variant` у `SectionTitle` используются только для стилей и не попадают в HTML. Изображения и описания проектов сохранены.
+
+## Независимая публикация
+
+Этот проект предназначен для отдельного репозитория `ArinaDovydovaa/portfolio-1`. Исходный `portfolio` сохраняется отдельно. В `vite.config.ts` установлен путь `/portfolio-1/`. Публикация выполняется существующим workflow GitHub Actions после push в `main`. В настройках нового репозитория нужно выбрать Pages → Source → GitHub Actions.

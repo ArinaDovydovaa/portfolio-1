@@ -43,9 +43,11 @@ const StyledSocialList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-`
+`;
 const SocialItem = styled.li`
-`
+`;
 const SocialLink = styled.a`
   display: flex;
-`
+  transition: transform 0.25s, opacity 0.25s;
+  &:hover { transform: translateY(-3px); opacity: 0.8; }
+`;
