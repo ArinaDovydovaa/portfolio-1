@@ -35,14 +35,14 @@ const StyledHeader = styled.header`
   background: transparent;
 `;
 const HeaderInner = styled.div`
-  min-height: 96px;
+  padding: 16px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: ${theme.spacing.lg};
 
   @media ${theme.media.mobile} {
-    min-height: 92px;
+    padding: 8px 0;
     gap: ${theme.spacing.sm};
   }
 `;
