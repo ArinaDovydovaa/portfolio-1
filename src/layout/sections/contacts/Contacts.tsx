@@ -5,13 +5,13 @@ import {ButtonAccent} from '@/components/ButtonAccent';
 import {Container} from '@/components/Container';
 import {theme} from '@/styles/Theme';
 import TelegramIcon from '@/assets/icons/telegram.svg?react';
-import GmailIcon from '@/assets/icons/gmail.svg?react';
-import VkIcon from '@/assets/icons/vk.svg?react';
+import GmailIcon from '@/assets/icons/mail.svg?react';
+import VkIcon from '@/assets/icons/vk-icon.svg?react';
 
 const socialItems = [
   {icon: TelegramIcon, href: 'https://t.me/Arina_Dovydova', label: 'Telegram'},
-  {icon: GmailIcon, href: 'mailto:arina.dovydova95@gmail.com', label: 'Gmail'},
   {icon: VkIcon, href: 'https://vk.ru/id183793786', label: 'ВКонтакте'},
+  {icon: GmailIcon, href: 'mailto:arina.dovydova95@gmail.com', label: 'Gmail'},
 ];
 
 export const Contacts = () => {
@@ -20,10 +20,15 @@ export const Contacts = () => {
       <Container>
         <ContactContent>
           <ContactLabel>ЕСТЬ ИДЕЯ ПРОЕКТА?</ContactLabel>
-          <SectionTitle $align="center" $variant="light">Давайте работать вместе</SectionTitle>
+          <SectionTitle
+            $align="center"
+            $variant="light"
+          >Давайте работать вместе</SectionTitle>
           <ContactText>Открыта к новым проектам и сотрудничеству. Расскажите о своей идее — обсудим интерфейс и детали.</ContactText>
-          <ButtonAccent as="a" href="mailto:arina.dovydova95@gmail.com">Написать мне ↗</ButtonAccent>
-          <EmailLink href="mailto:arina.dovydova95@gmail.com">arina.dovydova95@gmail.com</EmailLink>
+          <ButtonAccent
+            as="a"
+            href="mailto:arina.dovydova95@gmail.com"
+          >Написать мне ↗</ButtonAccent>
           <SocialList items={socialItems} />
         </ContactContent>
       </Container>
@@ -37,9 +42,20 @@ const ContactContent = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  svg { width: 24px; height: 24px; }
-  ul { gap: ${theme.spacing.lg}; }
-  ${SectionTitle} { margin-bottom: 24px; }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  ul {
+    margin-top: 30px;
+    gap: ${theme.spacing.lg};
+  }
+
+  ${SectionTitle} {
+    margin-bottom: 24px;
+  }
 `;
 const ContactLabel = styled.span`
   margin-bottom: 20px;
@@ -52,11 +68,4 @@ const ContactText = styled.p`
   margin-bottom: 30px;
   color: ${theme.colors.textMuted};
   font-size: 16px;
-`;
-const EmailLink = styled.a`
-  margin: 20px 0 30px;
-  color: ${theme.colors.textMuted};
-  overflow-wrap: anywhere;
-  font-size: 14px;
-  &:hover { color: ${theme.colors.accentColor}; }
 `;
